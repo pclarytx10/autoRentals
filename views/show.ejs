@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Show Page</title>
+</head>
+<body>
+    <h1>Car Information</h1>
+    <h2><%=car.name %> </h2>
+    <ul>
+        <% let carData = renderObjs(car) %>
+        <%- carData %> 
+    </ul>
+
+    <p>
+        <a href="/cars">Back...</a>
+    </p>
+</body>
+</html>
+
+<% function renderObjs(arrObj) { %>
+<%   let listString = []  %>
+<%
+<%   for (const [key, value] of Object.entries(arrObj)) { %>
+<%     console.log(`${key}: ${value}`); %>
+<%     listString.push('<li>' + `${key}: ${value}` + '</li>') %>
+<%   } %>
+<%    return listString.join(" ")  %>
+<% } %>
