@@ -26,14 +26,9 @@
 
 <% function renderObjs(arrObj) { %>
 <%   let listString = []  %>
-<%   let photos = `${arrObj.photos}` %>
-<%   let photosArr = photos.split(',') %>
-
 <%   for (const [key, value] of Object.entries(arrObj)) { %>
 <%     listString.push('<li>' + `${key}: ${value}` + '</li>') %>
 <%   } %>
-<%   photosArr.forEach(element => console.log(element)) %>
-<%    console.log(renderImages(photosArr)) %>
 <%   return listString.join(" ")  %>
 <% } %>
 
