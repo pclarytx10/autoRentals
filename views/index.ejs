@@ -15,4 +15,19 @@
 <body>
 <h1>Welcome to dPremium Auto Rentals!</h1>
     <h2>Rental Car Index</h2>
+    <ul>
+      <% let listString = renderList(allCars) %>
+      <%- listString %>
+    </ul>
+    
 </body>
+
+<% function renderList(arrList) { %>
+<%   let listString = []  %>
+<%   arrList.forEach(car => {  %>
+<%        console.log(car.name) %>
+<%        listString.push('<li>' + car.name + '</li>') %>
+<%    }) %>
+<%    console.log(listString.join(" ")) %>
+<%    return listString.join(" ")  %>
+<% } %>

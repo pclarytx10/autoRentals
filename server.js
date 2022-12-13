@@ -13,7 +13,9 @@ app.get('/cars/:id', (req,res) => {
 })
 
 app.get('/cars', (req,res) => {
-    res.send(cars)
+    res.render('index.ejs', {
+        allCars: cars
+    })
 })
 
 app.listen(PORT, () => {
