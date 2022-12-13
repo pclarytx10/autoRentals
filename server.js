@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+app.use(express.static('public'));
 const PORT = 3000
 
 const cars = require("./models/cars.js") 
@@ -9,7 +10,9 @@ app.get('/', (req,res) => {
 })
 
 app.get('/cars/:id', (req,res) => {
-    res.send(cars[req.params.id])
+    res.render('show.ejs', {
+        car: cars[req.params.id],
+    })
 })
 
 app.get('/cars', (req,res) => {

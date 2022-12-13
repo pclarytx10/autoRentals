@@ -13,6 +13,10 @@
         <% let carData = renderObjs(car) %>
         <%- carData %> 
     </ul>
+    <span id="images">
+        <% let imageData = renderImages(car.photos) %>
+        <%- imageData %> 
+    </span>
 
     <p>
         <a href="/cars">Back...</a>
@@ -22,10 +26,19 @@
 
 <% function renderObjs(arrObj) { %>
 <%   let listString = []  %>
-<%
+<%   let photos = `${arrObj.photos}` %>
+<%   let photosArr = photos.split(',') %>
+
 <%   for (const [key, value] of Object.entries(arrObj)) { %>
-<%     console.log(`${key}: ${value}`); %>
 <%     listString.push('<li>' + `${key}: ${value}` + '</li>') %>
 <%   } %>
-<%    return listString.join(" ")  %>
+<%   photosArr.forEach(element => console.log(element)) %>
+<%    console.log(renderImages(photosArr)) %>
+<%   return listString.join(" ")  %>
+<% } %>
+
+<% function renderImages(photoEntries) { %>
+    <%     let photosList = [] %>
+    <%     photoEntries.forEach(element => photosList.push('<img src="' + '/images/' + element + '" width="250">' )) %>
+    <%     return photosList %>
 <% } %>
