@@ -24,9 +24,9 @@
 
 <% function renderList(arrList) { %>
 <%   let listString = []  %>
-<%   arrList.forEach(car => {  %>
+<%   arrList.forEach((car, index) => {  %>
 <%        console.log(car.name) %>
-<%        listString.push('<li>' + car.name + '</li>') %>
+<%        listString.push('<li><a href="/cars/' + index + '">' + car.name + '</a></li>') %>
 <%    }) %>
 <%    console.log(listString.join(" ")) %>
 <%    return listString.join(" ")  %>
