@@ -7,13 +7,13 @@ const cars = [
         color: "Silver",
         seats: "7",
         doors: "4",
-        location: "Seattle, WA"
+        location: "Seattle, WA",
         vin: "JA4AD3A32LZO42682",
         license: "RYT-2162",
         registration: "TX",
-        registrationDate: "08-01-2022"
+        registrationDate: "08-01-2022",
         insurance: "",
-        insuranceDate: "12-31-2022".
+        insuranceDate: "12-31-2022",
         fuelType: "Gas",
         photos: ["mits2020.jpeg","mits2020-1.jpeg"]
     },
@@ -25,13 +25,13 @@ const cars = [
         color: "Blue",
         seats: "5",
         doors: "4",
-        location: "Temple, TX"
+        location: "Temple, TX",
         vin: "",
         license: "",
         registration: "TX",
-        registrationDate: "08-01-2022"
+        registrationDate: "08-01-2022",
         insurance: "Geico",
-        insuranceDate: "01-23-2023".
+        insuranceDate: "01-23-2023",
         fuelType: "Gas",
         photos: ["camrybl2023.jpeg","camrybl2023-1.jpeg"]
     },
@@ -43,13 +43,13 @@ const cars = [
         color: "Black",
         seats: "5",
         doors: "4",
-        location: "Temple. TX"
+        location: "Temple. TX",
         vin: "",
         license: "",
         registration: "TX",
-        registrationDate: "08-01-2022"
+        registrationDate: "08-01-2022",
         insurance: "Geico",
-        insuranceDate: "01-23-2023".
+        insuranceDate: "01-23-2023",
         fuelType: "Hybrid",
         photos: ["jeepGC2022.jpg","jeepGC2022-1.jpg"]
     },
