@@ -55,12 +55,22 @@ app.get('/cars', (req,res) => {
 })
 
 // New Route
+app.get('/cars/new', (req,res) => {
+    res.render('new.ejs')
+})
 
 // Delete Route
 
 // Update Route
 
 // Create Route
+app.post('/cars', (req,res) => {
+    // cars.push(req.body)
+    // res.redirect('/cars')
+    Vehicles.create(req.body, (err, createdVehicle) => {
+        res.redirect('/cars')   
+    })
+})
 
 // Edit Route
 
