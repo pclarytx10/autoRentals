@@ -1,0 +1,32 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+// Create Schema
+const VehicleSchema = new Schema(
+    {
+        name: {type: String, required: [true, "Name is required."], unique: [true, 'Name is in use.']},
+        make: String
+        model: String
+        year:  {type: Number, default: 2022},
+        color: String,
+        seats: {type: Number, default: 5}
+        doors: {type: Number, default: 4}
+        locationCity: {type: String, default: "Temple"},
+        locationState: {type: String, default: "TX"},
+        vin: String,
+        license: String,
+        registration: String,
+        registrationDate: Date,
+        insurance: String,
+        insuranceDate: Date,
+        fuelType: {type: String, default: "Gas"},
+        photos: Array
+    },
+    { timestamps: true }
+);
+
+// Create Model
+const Vehicle = mongoose.model('Vehicle', VehicleSchema);
+
+// Export Model
+module.exports = Vehicle;
