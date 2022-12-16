@@ -40,12 +40,6 @@ app.get('/cars/seed', (req, res) => {
 });
 
 // Index Route
-// app.get('/cars', (req,res) => {
-//     res.render('index.ejs', {
-//         allCars: cars
-//     })
-// })
-
 app.get('/cars', (req,res) => {
     Vehicles.find({}, (err, allVehicles) => {
         res.render('index.ejs', {
@@ -73,6 +67,13 @@ app.post('/cars', (req,res) => {
 })
 
 // Edit Route
+app.get('/cars/:id/edit', (req,res) => {
+    Vehicles.findById(req.params.id, (err, foundVehicle) => {
+        res.render('edit.ejs', {
+            vehicle: foundVehicle,
+        })
+    })
+})
 
 // Show Route  
 app.get('/cars/:id', (req,res) => {

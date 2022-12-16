@@ -19,10 +19,7 @@
             <% let imageData = renderImages(vehicle.photos) %>
             <%- imageData %> 
         </span>
-
-        <p>
-            <a href="/cars">Back...</a>
-        </p>
+        <a href="/cars/<%=vehicle._id; %>/edit">Edit</a>
     </main>
     <footer>
         <%- include('./partials/footer.ejs')%>
@@ -36,9 +33,7 @@
 <%   let vehicle =  JSON.parse(JSON.stringify(arrObj)) %>
 <%   delete vehicle.__v %>  
 <%   delete vehicle.name %>  
-<% console.log(vehicle) %> 
 <%   for (const [key, value] of Object.entries(vehicle)) { %>
-    <% console.log(`${key}: ${value}`); %>
 <%     listString.push('<li>' + `${key}: ` + `${value}` + '</li>') %>
 <%   } %>
 <%   return listString.join(" ")  %>

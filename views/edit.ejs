@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs')%>
+</head>
+<body>
+    <div class="body-overlay">
+        <header>
+            <%- include('./partials/header.ejs')%>
+        </header>
+    <main>
+        <div class="container">
+            <h1>Edit</h1>
+            <form action="/cars/<%=vehicle._id%>?_method=PUT" method="POST">
+                    <input type="text" name="name" value="name" /><br />
+                    <input type="text" name=" make" value="make" /><br />
+                    <input type="text" name="model" value="model" /><br />
+                    <input type="text" name="year" value="year" /><br />
+                    <input type="text" name="color" value="color" /><br />
+                    <input type="text" name="seats" value="seats" /><br />
+                    <input type="text" name="doors" value="doors" /><br />
+                    <input type="text" name="locationCity" value="locationCity" /><br />
+                    <input type="text" name="locationState" value="locationState" /><br />
+                    <input type="text" name="vin" value="vin" /><br />
+                    <input type="text" name="license" value="license" /><br />
+                    <input type="text" name="registration" value="registration" /><br />
+                    <input type="text" name="registrationDate" value="registrationDate" /><br />
+                    <input type="text" name="insurance" value="insurance" /><br />
+                    <input type="text" name="insuranceDate" value="insuranceDate" /><br />
+                    <input type="text" name="fuelType" value="fuelType" /><br />
+                    <input type="text" name="photos" value="photos" /><br />
+                    <input class="btn btn-primary btn-sm" type="submit" value="Submit Product" />
+            </form>
+        </div>
+    </main>
+    <footer>
+        <%- include('./partials/footer.ejs')%>
+    </footer>
+    </div>
+  </body>
+</html>
