@@ -5,12 +5,12 @@ const Schema = mongoose.Schema;
 const VehicleSchema = new Schema(
     {
         name: {type: String, required: [true, "Name is required."], unique: [true, 'Name is in use.']},
-        make: String
-        model: String
+        make: String,
+        model: String,
         year:  {type: Number, default: 2022},
         color: String,
-        seats: {type: Number, default: 5}
-        doors: {type: Number, default: 4}
+        seats: {type: Number, default: 5},
+        doors: {type: Number, default: 4},
         locationCity: {type: String, default: "Temple"},
         locationState: {type: String, default: "TX"},
         vin: String,
