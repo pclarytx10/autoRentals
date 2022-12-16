@@ -10,7 +10,6 @@
     </header>
   <main>
       <div class="container">
-        <h1>Welcome to dPremium Auto Rentals!</h1>
             <h2>Rental Car Index</h2>
             <ul>
               <% let listString = renderList(allCars) %>
@@ -26,9 +25,7 @@
 <% function renderList(arrList) { %>
 <%   let listString = []  %>
 <%   arrList.forEach((car, index) => {  %>
-<%        console.log(car.name) %>
 <%        listString.push('<li><a href="/cars/' + index + '">' + car.name + '</a></li>') %>
 <%    }) %>
-<%    console.log(listString.join(" ")) %>
 <%    return listString.join(" ")  %>
 <% } %>
