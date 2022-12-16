@@ -16,9 +16,9 @@ const VehicleSchema = new Schema(
         vin: String,
         license: String,
         registration: String,
-        registrationDate: Date,
+        registrationDate: {type: Date, default: "08-01-2022"},
         insurance: String,
-        insuranceDate: Date,
+        insuranceDate: {type: Date, default: "08-01-2022"},
         fuelType: {type: String, default: "Gas"},
         photos: Array
     },
