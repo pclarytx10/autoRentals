@@ -10,9 +10,9 @@
     </header>
   <main>
       <div class="container">
-            <h3>Rental Car Index</h3>
+            <h3>Index</h3>
             <ul>
-              <% let listString = renderList(allCars) %>
+              <% let listString = renderList(vehicles) %>
               <%- listString %>
             </ul>
           </main>
@@ -24,8 +24,8 @@
 
 <% function renderList(arrList) { %>
 <%   let listString = []  %>
-<%   arrList.forEach((car, index) => {  %>
-<%        listString.push('<li><a href="/cars/' + index + '">' + car.name + '</a></li>') %>
+<%   arrList.forEach((vehicle, index) => {  %>
+<%        listString.push('<li><a href="/cars/' + vehicle._id + '">' + vehicle.name + '</a></li>') %>
 <%    }) %>
 <%    return listString.join(" ")  %>
 <% } %>
