@@ -19,7 +19,7 @@ db.on("error", (err) => console.log(err.message + " is mongo not running?"))
 db.on("connected", () => console.log("mongo connected"))
 
 // Middleware
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({extended: false}))
 app.use(methodOverride("_method"))
 
 // Routes
@@ -76,8 +76,10 @@ app.post('/cars', (req,res) => {
 
 // Show Route  
 app.get('/cars/:id', (req,res) => {
-    res.render('show.ejs', {
-        car: cars[req.params.id],
+    Vehicles.findById(req.params.id, (err, foundVehicle) => {
+        res.render('show.ejs', {
+            vehicle: foundVehicle,
+        })
     })
 })
 

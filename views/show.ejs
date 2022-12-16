@@ -10,14 +10,13 @@
         </header>
       <main>
           <div class="container">
-        <h1>Car Information</h1>
-        <h2><%=car.name %> </h2>
+        <h3><%=vehicle.name %> </h3>
         <ul>
-            <% let carData = renderObjs(car) %>
+            <% let carData = renderObjs(vehicle) %>
             <%- carData %> 
         </ul>
         <span id="images">
-            <% let imageData = renderImages(car.photos) %>
+            <% let imageData = renderImages(vehicle.photos) %>
             <%- imageData %> 
         </span>
 
@@ -34,8 +33,13 @@
 
 <% function renderObjs(arrObj) { %>
 <%   let listString = []  %>
-<%   for (const [key, value] of Object.entries(arrObj)) { %>
-<%     listString.push('<li>' + `${key}: ${value}` + '</li>') %>
+<%   let vehicle =  JSON.parse(JSON.stringify(arrObj)) %>
+<%   delete vehicle.__v %>  
+<%   delete vehicle.name %>  
+<% console.log(vehicle) %> 
+<%   for (const [key, value] of Object.entries(vehicle)) { %>
+    <% console.log(`${key}: ${value}`); %>
+<%     listString.push('<li>' + `${key}: ` + `${value}` + '</li>') %>
 <%   } %>
 <%   return listString.join(" ")  %>
 <% } %>
