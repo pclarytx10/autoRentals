@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Show Page</title>
-</head>
+    <head>
+        <%- include('./partials/head.ejs')%>
+    </head>
 <body>
-    <h1>Car Information</h1>
-    <h2><%=car.name %> </h2>
-    <ul>
-        <% let carData = renderObjs(car) %>
-        <%- carData %> 
-    </ul>
-    <span id="images">
-        <% let imageData = renderImages(car.photos) %>
-        <%- imageData %> 
-    </span>
+    <div class="body-overlay">
+        <header>
+            <%- include('./partials/header.ejs')%>
+        </header>
+      <main>
+          <div class="container">
+        <h1>Car Information</h1>
+        <h2><%=car.name %> </h2>
+        <ul>
+            <% let carData = renderObjs(car) %>
+            <%- carData %> 
+        </ul>
+        <span id="images">
+            <% let imageData = renderImages(car.photos) %>
+            <%- imageData %> 
+        </span>
 
-    <p>
-        <a href="/cars">Back...</a>
-    </p>
+        <p>
+            <a href="/cars">Back...</a>
+        </p>
+    </main>
+    <footer>
+        <%- include('./partials/footer.ejs')%>
+    </footer>
+    </div>
 </body>
 </html>
 

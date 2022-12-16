@@ -1,0 +1,131 @@
+/* ================ */
+/*     GENERAL      */
+/* ================ */
+body {
+    background-image: url('https://images.pexels.com/photos/2680270/pexels-photo-2680270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', helvetica;
+}
+a {
+text-decoration: none;
+}
+/* ================ */
+/*   CONTAINERS     */
+/* ================ */
+.body-overlay {
+    background: rgba(3, 30, 96, 0.1);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding: 5em;
+    overflow: auto;
+    box-sizing: border-box;
+}
+main, header, footer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em 3em;
+    box-sizing: border-box;
+    background: #f9f9f9;
+    border-radius: .5em;
+    text-align: center;
+    box-shadow: 1px 1px 5px #888;
+    display: flex;
+    justify-content: space-between;
+}
+  
+/* ================ */
+/*      HEADER     */
+/* ================ */
+header {
+    margin-bottom: 2em;
+}
+header ul {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+header li {
+    font-family: 'Montserrat', helvetica;
+    font-weight: 700;
+    font-size: 0.8em;
+    margin-left: 1em;
+    text-transform: uppercase;
+}
+header li a {
+    color: rgb(4, 65, 221);
+}
+header h1 {
+    color: rgb(3, 30, 96);
+}
+
+/* ================ */
+/*      INDEX       */
+/* ================ */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 2em 0;
+    font-family: 'Montserrat', helvetica;
+}
+main h1 {
+    display: inline-block;
+    color: rgb(3, 30, 96);
+    border-bottom: 4px solid rgba(3, 30, 96, .5);
+    padding-bottom: 0.2em;
+    width: 70%;
+    margin-bottom: 0.5em;
+}
+main > div {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(3, 30, 96);
+}
+main.show-main {
+    display: block;
+}
+a {
+    color: rgb(4, 65, 221);
+    margin: 1em;
+}
+/* ================ */
+/*       SHOW       */
+/* ================ */
+img {
+    border-radius: 1em;
+    margin: .5em;
+}
+.showList {
+    font-family: 'Montserrat', helvetica;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+/* ================ */
+/*       NEW        */
+/* ================ */
+input[type="text"], input[type="submit"] {
+    width: 100%;
+    padding: 1em;
+    border: 0px;
+    border-radius: 0.5em;
+    box-shadow: 1px 1px 2px #ddd;
+    margin: 0.5em 0;
+}
+/* ================ */
+/*     FOOTER       */
+/* ================ */
+footer {
+margin-top: 2em;
+font-weight: 300;
+font-size: 0.9em;
+letter-spacing: 0.1em;
+color: rgb(3, 30, 96);
+}
