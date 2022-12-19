@@ -30,6 +30,11 @@ A live version of this app is hosted on [Github.io.](https://pclarytx10.github.i
   - [x] Add New / Create 
   - [x] Edit / Update
   - [x] Delete
+- [ ] Full CRUD for Rentals Model
+  - [ ] Index of Rentals
+  - [ ] Add New / Create 
+  - [ ] Edit / Update
+  - [ ] Delete
 - [ ] Car Rental Form (User Facing)
 	- [ ] Location of Rental (Austin, Temple, etc.)
 	- [ ] Delivery Needed (Y/N)
@@ -42,7 +47,7 @@ A live version of this app is hosted on [Github.io.](https://pclarytx10.github.i
 - [ ] A Model for Customer / Login Information (Profile)
   - [ ] Model Hosted on Atlas
 - [ ] Full CRUD for Profile Model
-  - [ ] Index of Vehicles
+  - [ ] Index of Profiles
   - [ ] Add New / Create 
   - [ ] Edit / Update
   - [ ] Delete
