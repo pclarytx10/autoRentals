@@ -11,7 +11,17 @@ Dpremium Rentals is a website for a small car rental business. The site should h
 
 ## Screenshot(s):
 
-< screenshots >
+![Home](/wireframes/Home.png)
+
+![Cars Index Sub](/wireframes/Sub-Cars-Index-Vehicle%20.png)
+
+![Show Vehicle](/wireframes/Show-Vehicle.png)
+
+![Edit Vehicle](/wireframes/Edit-Vehicle.png)
+
+![Returning User](/wireframes/Returning-User.png)
+
+![Schedule Rental](/wireframes/Schedule-Rental.png)
 
 ## Getting Started: 
 A live version of this app is hosted on [Github.io.](https://pclarytx10.github.io) < more instructions coming >
