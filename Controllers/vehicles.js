@@ -28,6 +28,8 @@ vehicleRouter.get('/new', (req,res) => {
     res.render('new.ejs')
 })
 
+//todo: add update and delete routes
+
 // Delete Route
 
 // Update Route
