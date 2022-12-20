@@ -24,7 +24,7 @@ app.use(methodOverride("_method"))
 
 // Routes
 const vehiclesController = require('./controllers/vehicles.js')
-app.use('/vehicles', vehiclesController)
+app.use('/cars', vehiclesController)
 
 // Root Route
 app.get('/', (req,res) => {
@@ -34,46 +34,6 @@ app.get('/', (req,res) => {
 // Terms Route
 app.get('/terms', (req,res) => {
     res.render('terms.ejs')
-})
-
-
-
-
-
-// New Route
-app.get('/cars/new', (req,res) => {
-    res.render('new.ejs')
-})
-
-// Delete Route
-
-// Update Route
-
-// Create Route
-app.post('/cars', (req,res) => {
-    // cars.push(req.body)
-    // res.redirect('/cars')
-    Vehicles.create(req.body, (err, createdVehicle) => {
-        res.redirect('/cars')   
-    })
-})
-
-// Edit Route
-app.get('/cars/:id/edit', (req,res) => {
-    Vehicles.findById(req.params.id, (err, foundVehicle) => {
-        res.render('edit.ejs', {
-            vehicle: foundVehicle,
-        })
-    })
-})
-
-// Show Route  
-app.get('/cars/:id', (req,res) => {
-    Vehicles.findById(req.params.id, (err, foundVehicle) => {
-        res.render('show.ejs', {
-            vehicle: foundVehicle,
-        })
-    })
 })
 
 // Listen

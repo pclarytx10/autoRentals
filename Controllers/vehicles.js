@@ -23,4 +23,41 @@ vehicleRouter.get('/', (req,res) => {
     })
 })
 
+// New Route
+vehicleRouter.get('/new', (req,res) => {
+    res.render('new.ejs')
+})
+
+// Delete Route
+
+// Update Route
+
+// Create Route
+vehicleRouter.post('/', (req,res) => {
+    // cars.push(req.body)
+    // res.redirect('/cars')
+    Vehicles.create(req.body, (err, createdVehicle) => {
+        res.redirect('/cars')   
+    })
+})
+
+// Edit Route
+vehicleRouter.get('/:id/edit', (req,res) => {
+    Vehicles.findById(req.params.id, (err, foundVehicle) => {
+        res.render('edit.ejs', {
+            vehicle: foundVehicle,
+        })
+    })
+})
+
+// Show Route  
+vehicleRouter.get('/:id', (req,res) => {
+    Vehicles.findById(req.params.id, (err, foundVehicle) => {
+        res.render('show.ejs', {
+            vehicle: foundVehicle,
+        })
+    })
+})
+
+
 module.exports = vehicleRouter;

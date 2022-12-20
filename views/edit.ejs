@@ -11,8 +11,9 @@
     <main>
         <div class="container">
             <h1>Edit</h1>
+            <!-- todo: add vehicle.values to the input fields  -->
             <form action="/cars/<%=vehicle._id%>?_method=PUT" method="POST">
-                    <input type="text" name="name" value="name" /><br />
+                    <input type="text" name="name" value="<%=vehicle.name%>" /><br />
                     <input type="text" name=" make" value="make" /><br />
                     <input type="text" name="model" value="model" /><br />
                     <input type="text" name="year" value="year" /><br />
