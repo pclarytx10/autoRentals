@@ -28,6 +28,11 @@ app.get('/', (req,res) => {
     res.render('home.ejs')
 })
 
+// Terms Route
+app.get('/terms', (req,res) => {
+    res.render('terms.ejs')
+})
+
 // Seed
 const carsSeed = require('./models/carsSeed.js');
 
