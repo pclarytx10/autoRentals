@@ -23,6 +23,9 @@ app.use(express.urlencoded({extended: false}))
 app.use(methodOverride("_method"))
 
 // Routes
+const vehiclesController = require('./controllers/vehicles.js')
+app.use('/vehicles', vehiclesController)
+
 // Root Route
 app.get('/', (req,res) => {
     res.render('home.ejs')
@@ -33,25 +36,9 @@ app.get('/terms', (req,res) => {
     res.render('terms.ejs')
 })
 
-// Seed
-const carsSeed = require('./models/carsSeed.js');
 
-app.get('/cars/seed', (req, res) => {
-	Vehicles.deleteMany({}, (error, allVehicles) => {});
 
-	Vehicles.create(carsSeed, (error, data) => {
-		res.redirect('/cars');
-	});
-});
 
-// Index Route
-app.get('/cars', (req,res) => {
-    Vehicles.find({}, (err, allVehicles) => {
-        res.render('index.ejs', {
-            vehicles: allVehicles,
-        })
-    })
-})
 
 // New Route
 app.get('/cars/new', (req,res) => {
