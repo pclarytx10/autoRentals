@@ -28,8 +28,6 @@ vehicleRouter.get('/new', (req,res) => {
     res.render('new.ejs')
 })
 
-//todo: add update and delete routes
-
 // Delete Route
 vehicleRouter.delete('/:id', (req,res) => {
     Vehicles.findByIdAndDelete(req.params.id, (err, data) => {
@@ -45,6 +43,7 @@ vehicleRouter.put('/:id', (req,res) => {
             res.redirect(`/cars/${req.params.id}`)
         })
 })
+// todo: troubleshoot photos value update not working
 
 // Create Route
 vehicleRouter.post('/', (req,res) => {
