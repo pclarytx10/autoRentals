@@ -25,7 +25,7 @@ app.use(methodOverride("_method"))
 // Routes
 // Root Route
 app.get('/', (req,res) => {
-    res.redirect('/cars')
+    res.render('home.ejs')
 })
 
 // Seed
