@@ -20,6 +20,8 @@
             <%- imageData %> 
         </span>
         <a href="/cars/<%=vehicle._id; %>/edit">Edit</a>
+        <form  action="/cars/<%=vehicle._id; %>?_method=DELETE" method="POST">
+            <input class="btn btn-danger btn-sm" type="submit" value="Delete">
     </main>
     <footer>
         <%- include('./partials/footer.ejs')%>

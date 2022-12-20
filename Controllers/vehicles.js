@@ -31,6 +31,11 @@ vehicleRouter.get('/new', (req,res) => {
 //todo: add update and delete routes
 
 // Delete Route
+vehicleRouter.delete('/:id', (req,res) => {
+    Vehicles.findByIdAndDelete(req.params.id, (err, data) => {
+        res.redirect('/cars')
+    })
+})
 
 // Update Route
 

@@ -8,6 +8,7 @@ const VehicleSchema = new Schema(
         make: String,
         model: String,
         year:  {type: Number, default: 2022},
+        mileage: {type: Number, default: 0},
         color: String,
         seats: {type: Number, default: 5},
         doors: {type: Number, default: 4},
