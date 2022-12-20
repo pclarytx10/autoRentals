@@ -38,6 +38,13 @@ vehicleRouter.delete('/:id', (req,res) => {
 })
 
 // Update Route
+vehicleRouter.put('/:id', (req,res) => {
+    Vehicles.findByIdAndUpdate(req.params.id, 
+        req.body, {new:true}, 
+        (err, updatedVehicle) => {
+            res.redirect(`/cars/${req.params.id}`)
+        })
+})
 
 // Create Route
 vehicleRouter.post('/', (req,res) => {
