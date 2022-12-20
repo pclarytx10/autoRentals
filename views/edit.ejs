@@ -13,23 +13,41 @@
             <h1>Edit</h1>
             <!-- todo: add vehicle.values to the input fields  -->
             <form action="/cars/<%=vehicle._id%>?_method=PUT" method="POST">
-                    <input type="text" name="name" value="<%=vehicle.name%>" /><br />
-                    <input type="text" name=" make" value="make" /><br />
-                    <input type="text" name="model" value="model" /><br />
-                    <input type="text" name="year" value="year" /><br />
-                    <input type="text" name="color" value="color" /><br />
-                    <input type="text" name="seats" value="seats" /><br />
-                    <input type="text" name="doors" value="doors" /><br />
-                    <input type="text" name="locationCity" value="locationCity" /><br />
-                    <input type="text" name="locationState" value="locationState" /><br />
-                    <input type="text" name="vin" value="vin" /><br />
-                    <input type="text" name="license" value="license" /><br />
-                    <input type="text" name="registration" value="registration" /><br />
-                    <input type="text" name="registrationDate" value="registrationDate" /><br />
-                    <input type="text" name="insurance" value="insurance" /><br />
-                    <input type="text" name="insuranceDate" value="insuranceDate" /><br />
-                    <input type="text" name="fuelType" value="fuelType" /><br />
-                    <input type="text" name="photos" value="photos" /><br />
+                <label for="name">Name:</label>
+                    <input type="text" name="name" value="<%=vehicle.name%>" /><br>
+                <label for="make">Make:</label>
+                    <input type="text" name="make" value="<%=vehicle.make%>" /><br>
+                <label for="model">Model:</label>
+                    <input type="text" name="model" value="<%=vehicle.model%>" /><br />
+                <label for="year">Year:</label>
+                    <input type="text" name="year" value="<%=vehicle.year%>" /><br />
+                <label for="mileage">Mileage:</label>
+                    <input type="text" name="color" value="<%=vehicle.color%>" /><br />
+                <label for="mileage">Mileage:</label>
+                    <input type="text" name="mileage" value="<%=vehicle.mileage%>" /><br />
+                <label for="seats">Seats:</label>
+                    <input type="text" name="seats" value="<%=vehicle.seats%>" /><br />
+                <label for="doors">Doors:</label>
+                    <input type="text" name="doors" value="<%=vehicle.doors%>" /><br />
+                <label for="locationCity">City:</label>
+                    <input type="text" name="locationCity" value="<%=vehicle.locationCity%>" /><br />
+                <label for="locationState">State:</label>
+                    <input type="text" name="locationState" value="<%=vehicle.locationState%>" /><br />
+                <label for="vin">VIN:</label>
+                    <input type="text" name="vin" value="<%=vehicle.vin%>" /><br />
+                <label for="license">License:</label>
+                    <input type="text" name="license" value="<%=vehicle.license%>" /><br />
+                <label for="registration">Registration:</label>
+                    <input type="text" name="registration" value="<%=vehicle.registration%>" /><br />
+                <label for="registrationDate">Registration Date:</label>
+                    <input type="text" name="registrationDate" value="<%=vehicle.registrationDate%>" /><br />
+                <label for="insurance">Insurance:</label>
+                    <input type="text" name="insurance" value="<%=vehicle.insurance%>" /><br />
+                <label for="insuranceDate">Insurance Date:</label>
+                    <input type="text" name="insuranceDate" value="<%=vehicle.insuranceDate%>" /><br />
+                    <input type="text" name="fuelType" value="<%=vehicle.fuelType%>" /><br />
+                <label for="photos">Photos:</label>
+                    <input type="text" name="photos" value="<%=vehicle.photos%>" /><br />
                     <input class="btn btn-primary btn-sm" type="submit" value="Submit Product" />
             </form>
         </div>
