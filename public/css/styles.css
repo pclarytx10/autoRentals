@@ -127,6 +127,9 @@ input[type="text"], input[type="submit"] {
     box-shadow: 1px 1px 2px #ddd;
     margin: 0.5em 0;
 }
+#termsList > li {
+    text-align: left;
+}
 /* ================ */
 /*     FOOTER       */
 /* ================ */
