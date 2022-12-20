@@ -30,7 +30,7 @@ A live version of this app is hosted on [Github.io.](https://pclarytx10.github.i
 
 ### Features:
 - [ ] Site Hosted on Heroku 
-- [ ] Company Landing Page (About, Locations, Cars)
+- [x] Company Landing Page (About, Locations, Cars)
   - [x] Root "/" route
 - [x] A Model for Vehicles
   - [x] Model Hosted on Atlas
