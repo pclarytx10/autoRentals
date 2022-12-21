@@ -4,6 +4,7 @@ const app = express()
 // const cars = require("./models/cars.js"); 
 const mongoose = require("mongoose")
 const Vehicles = require("./models/vehicles.js");
+const Rentals = require("./models/rentals.js");
 const methodOverride = require("method-override")
 app.use(express.static('public'));
 
@@ -22,9 +23,11 @@ db.on("connected", () => console.log("mongo connected"))
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride("_method"))
 
-// Routes
+// Controllers
 const vehiclesController = require('./controllers/vehicles.js')
 app.use('/cars', vehiclesController)
+const rentalsController = require('./controllers/rentals.js')
+app.use('/rentals', rentalsController)
 
 // Root Route
 app.get('/', (req,res) => {
