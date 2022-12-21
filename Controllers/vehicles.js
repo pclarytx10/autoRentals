@@ -36,16 +36,12 @@ vehicleRouter.delete('/:id', (req,res) => {
 })
 
 // Update Route
-vehicleRouter.put('/:id', (req,res) => {
-    console.log(JSON.stringify(req.body.photos.length))
-    
+vehicleRouter.put('/:id', (req,res) => { 
     if (JSON.stringify(req.body.photos.length) <= 1) {
         req.body.photos = "no_photos.png"
     } else {
         req.body.photos = req.body.photos.split(',')
     }
-    
-    console.log(req.body.photos)
 
     Vehicles.findByIdAndUpdate(req.params.id, 
         req.body, {new:true}, 
