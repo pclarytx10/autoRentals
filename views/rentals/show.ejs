@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs')%>
+    </head>
+<body>
+    <div class="body-overlay">
+        <header>
+            <%- include('../partials/header.ejs')%>
+        </header>
+      <main>
+          <div class="container">
+        <h3><%=rental._id %> </h3>
+        <ul>
+            <% let rentalData = renderObjs(rental) %>
+            <%- rentalData %> 
+        </ul>
+        <a href="/rentals/<%=rental._id; %>/edit">Edit</a>
+        <form  action="/rentals/<%=rental._id; %>?_method=DELETE" method="POST">
+            <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs')%>
+    </footer>
+    </div>
+</body>
+</html>
+
+<% function renderObjs(arrObj) { %>
+<%   let listString = []  %>
+<%   let rental =  JSON.parse(JSON.stringify(arrObj)) %>
+<%   delete rental.__v %>  
+<%   delete rental._id %>  
+<%   for (const [key, value] of Object.entries(rental)) { %>
+<%     listString.push('<li>' + `${key}: ` + `${value}` + '</li>') %>
+<%   } %>
+<%   return listString.join("")  %>
+<% } %>

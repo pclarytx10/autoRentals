@@ -33,6 +33,13 @@ rentalRouter.post('/', (req,res) => {
 // Export Router
 
 // Show Route
+rentalRouter.get('/:id', (req,res) => {
+    Rentals.findById(req.params.id, (err, foundRental) => {
+        res.render('rentals/show.ejs', {
+            rental: foundRental
+        })
+    })
+})
 
 //Export Router
 module.exports = rentalRouter;
