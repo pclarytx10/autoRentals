@@ -1,0 +1,40 @@
+vehicle 
+customer 
+rentalStartDate 
+deliveryNeeded 
+totalCost 
+rentalLocation 
+rentalStatus 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs')%>
+</head>
+<body>
+    <div class="body-overlay">
+        <header>
+            <%- include('../partials/header.ejs')%>
+        </header>
+    <main>
+        <div class="container">
+            <h1>New Vehicle</h1>
+            <form action="/rentals" method="POST">
+                <input type="text" name="vehicle" placeholder="vehicle" /><br />
+                <input type="text" name="customer" placeholder="customer" /><br /> 
+                <input type="text" name="rentalStartDate" placeholder="rentalStartDate" /><br /> 
+                <input type="text" name="rentalEndDate" placeholder="rentalEndDate" /><br /> 
+                <input type="text" name="deliveryNeeded" placeholder="deliveryNeeded" /><br /> 
+                <input type="text" name="totalCost" placeholder="totalCost" /><br /> 
+                <input type="text" name="rentalLocation" placeholder="rentalLocation" /><br /> 
+                <input type="text" name="rentalStatus" placeholder="rentalStatus" /><br /> 
+                <input class="btn btn-primary btn-sm" type="submit" value="Create" />
+            </form>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs')%>
+    </footer>
+    </div>
+  </body>
+</html>

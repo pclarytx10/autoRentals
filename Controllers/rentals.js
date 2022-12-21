@@ -6,16 +6,29 @@ const Rentals = require('../models/rentals.js');
 // Routes
 // Index Route
 rentalRouter.get('/', (req,res) => {
-    res.render('rentals/index.ejs')
+    Rentals.find({}, (err, allRentals) => {     
+    res.render('rentals/index.ejs', {
+        rentals: allRentals
+        })
+    })
 })
 
 // New Route
+rentalRouter.get('/new', (req,res) => {
+    res.render('rentals/new.ejs')
+})
 
 // Delete Route
 
 // Update Route
 
 // Create Route
+rentalRouter.post('/', (req,res) => {
+    console.log(req.body)
+    Rentals.create(req.body, (error, createdRental) => {
+        res.redirect('/rentals')
+    })
+})
 
 // Export Router
 
