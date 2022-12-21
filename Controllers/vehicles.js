@@ -25,7 +25,7 @@ vehicleRouter.get('/', (req,res) => {
 
 // New Route
 vehicleRouter.get('/new', (req,res) => {
-    res.render('new.ejs')
+    res.render('vehicles/new.ejs')
 })
 
 // Delete Route
@@ -42,7 +42,6 @@ vehicleRouter.put('/:id', (req,res) => {
     } else {
         req.body.photos = req.body.photos.split(',')
     }
-
     Vehicles.findByIdAndUpdate(req.params.id, 
         req.body, {new:true}, 
         (err, updatedVehicle) => {
@@ -52,8 +51,11 @@ vehicleRouter.put('/:id', (req,res) => {
 
 // Create Route
 vehicleRouter.post('/', (req,res) => {
-    // cars.push(req.body)
-    // res.redirect('/cars')
+    if (JSON.stringify(req.body.photos.length) <= 1) {
+        req.body.photos = "no_photos.png"
+    } else {
+        req.body.photos = req.body.photos.split(',')
+    }
     Vehicles.create(req.body, (err, createdVehicle) => {
         res.redirect('/cars')   
     })
