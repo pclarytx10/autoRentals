@@ -17,7 +17,7 @@ vehicleRouter.get('/seed', (req, res) => {
 // Index Route
 vehicleRouter.get('/', (req,res) => {
     Vehicles.find({}, (err, allVehicles) => {
-        res.render('index.ejs', {
+        res.render('vehicles/index.ejs', {
             vehicles: allVehicles,
         })
     })
