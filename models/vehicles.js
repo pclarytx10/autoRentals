@@ -12,6 +12,8 @@ const VehicleSchema = new Schema(
         color: String,
         seats: {type: Number, default: 5},
         doors: {type: Number, default: 4},
+        type: {type: String, default: "Sedan"},
+        drive: {type: String, default: "FWD"},
         locationCity: {type: String, default: "Temple"},
         locationState: {type: String, default: "TX"},
         vin: String,
