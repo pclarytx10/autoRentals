@@ -37,14 +37,22 @@ vehicleRouter.delete('/:id', (req,res) => {
 
 // Update Route
 vehicleRouter.put('/:id', (req,res) => {
-    req.body.photos = req.body.photos.split(',')
+    console.log(JSON.stringify(req.body.photos.length))
+    
+    if (JSON.stringify(req.body.photos.length) <= 1) {
+        req.body.photos = "no_photos.png"
+    } else {
+        req.body.photos = req.body.photos.split(',')
+    }
+    
+    console.log(req.body.photos)
+
     Vehicles.findByIdAndUpdate(req.params.id, 
         req.body, {new:true}, 
         (err, updatedVehicle) => {
             res.redirect(`/cars/${req.params.id}`)
         })
 })
-// todo: troubleshoot photos value update not working
 
 // Create Route
 vehicleRouter.post('/', (req,res) => {
