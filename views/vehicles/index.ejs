@@ -9,17 +9,20 @@
         <%- include('../partials/header.ejs')%>
     </header>
   <main>
-      <div class="container">
-            <h3>Index</h3>
-            <ul>
-              <% let listString = renderList(vehicles) %>
-              <%- listString %>
-            </ul>
-          </main>
-          <footer>
-              <%- include('../partials/footer.ejs')%>
-          </footer>
-          </div>
+    <div class="container">
+        <h3>Available Cars</h3>
+        <ul>
+          <% let listString = renderList(vehicles) %>
+          <%- listString %>
+        </ul>
+        <a class="btn btn-success btn-sm" href="/cars/new">Add a Car</a></li>
+    </div>
+    
+  </main>
+  <footer>
+      <%- include('../partials/footer.ejs')%>
+  </footer>
+
 </body>
 
 <% function renderList(arrList) { %>

@@ -5,6 +5,9 @@ const Rentals = require('../models/rentals.js');
 
 // Routes
 // Index Route
+rentalRouter.get('/', (req,res) => {
+    res.render('rentals/index.ejs')
+})
 
 // New Route
 
