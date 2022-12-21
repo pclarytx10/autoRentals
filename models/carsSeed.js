@@ -10,6 +10,8 @@ const cars = [
         doors: "4",
         type: "Midsize SUV",
         drive: "FWD",
+        fuelType: "Gas",
+        price: "75",
         locationCity: "Seattle",
         locationState: "WA",
         vin: "JA4AD3A32LZO42682",
@@ -18,7 +20,6 @@ const cars = [
         registrationDate: "08-01-2022",
         insurance: "",
         insuranceDate: "12-31-2022",
-        fuelType: "Gas",
         photos: ["mits2020.jpeg","mits2020-1.jpeg"]
     },
     {
@@ -32,6 +33,8 @@ const cars = [
         doors: "4",
         type: "Midsize Sedan",
         drive: "FWD",
+        fuelType: "Gas",
+        price: "65",
         location: "Temple, TX",
         vin: "4T1C11AK7PU095400",
         license: "SHP-7827",
@@ -40,7 +43,6 @@ const cars = [
         registrationDate: "08-01-2022",
         insurance: "Geico",
         insuranceDate: "01-23-2023",
-        fuelType: "Gas",
         photos: ["camrybl2023.jpeg","camrybl2023-1.jpeg"]
     },
     {
@@ -54,6 +56,8 @@ const cars = [
         doors: "4",
         type: "Fullsize SUV",
         drive: "4x4",
+        fuelType: "Hybrid",
+        price: "100",
         locationCity: "Temple",
         locationState: "TX",
         vin: "1C4RJYC68N8706872",
@@ -62,7 +66,6 @@ const cars = [
         registrationDate: "08-01-2022",
         insurance: "Geico",
         insuranceDate: "01-23-2023",
-        fuelType: "Hybrid",
         photos: ["jeepGC2022.jpg","jeepGC2022-1.jpg"]
     },
     {
@@ -76,6 +79,8 @@ const cars = [
         doors: "4",
         type: "Midsize SUV",
         drive: "FWD",
+        fuelType: "Gas",
+        price: "65",
         locationCity: "Temple",
         locationState: "TX",
         vin: "3GNAXKEV2NS239475",
@@ -84,7 +89,6 @@ const cars = [
         registrationDate: "08-01-2022",
         insurance: "Geico",
         insuranceDate: "01-23-2023",
-        fuelType: "Gas",
         photos: ["equinoxGray2022.jpg","equinoxGray2022-1.jpg"]
     },
   ]

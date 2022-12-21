@@ -14,6 +14,8 @@ const VehicleSchema = new Schema(
         seats: {type: Number, default: 5},
         doors: {type: Number, default: 4},
         drive: {type: String, default: "FWD"},
+        fuelType: {type: String, default: "Gas"},
+        price: {type: Number, default: 0},
         locationCity: {type: String, default: "Temple"},
         locationState: {type: String, default: "TX"},
         vin: String,
@@ -22,7 +24,6 @@ const VehicleSchema = new Schema(
         registrationDate: {type: Date, default: "08-01-2022"},
         insurance: String,
         insuranceDate: {type: Date, default: "08-01-2022"},
-        fuelType: {type: String, default: "Gas"},
         photos: Array
     },
     { timestamps: true }
