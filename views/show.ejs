@@ -43,6 +43,8 @@
 
 <% function renderImages(photoEntries) { %>
     <%     let photosList = [] %>
-    <%     photoEntries.forEach(element => photosList.push('<img src="' + '/images/' + element + '" width="250">' )) %>
+    <%     photoEntries.forEach(element => {
+        photosList.push('<img src="' + '/images/' + element + '" width="250">' )
+            })%>
     <%     return photosList %>
 <% } %>

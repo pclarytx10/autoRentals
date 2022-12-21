@@ -37,6 +37,7 @@ vehicleRouter.delete('/:id', (req,res) => {
 
 // Update Route
 vehicleRouter.put('/:id', (req,res) => {
+    req.body.photos = req.body.photos.split(',')
     Vehicles.findByIdAndUpdate(req.params.id, 
         req.body, {new:true}, 
         (err, updatedVehicle) => {
