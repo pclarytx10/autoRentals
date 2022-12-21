@@ -64,7 +64,7 @@ vehicleRouter.post('/', (req,res) => {
 // Edit Route
 vehicleRouter.get('/:id/edit', (req,res) => {
     Vehicles.findById(req.params.id, (err, foundVehicle) => {
-        res.render('edit.ejs', {
+        res.render('vehicles/edit.ejs', {
             vehicle: foundVehicle,
         })
     })
