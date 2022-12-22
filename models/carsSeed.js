@@ -93,5 +93,4 @@ const cars = [
     },
   ]
   
-  //at the bottom of /models/fruits.js
   module.exports = cars
