@@ -40,17 +40,17 @@ A live version of this app is hosted on [Github.io.](https://pclarytx10.github.i
   - [x] Add New / Create 
   - [x] Edit / Update
   - [x] Delete
-- [ ] Full CRUD for Rentals Model
-  - [ ] Index of Rentals
-  - [ ] Add New / Create 
-  - [ ] Edit / Update
-  - [ ] Delete
+- [x] Full CRUD for Rentals Model
+  - [x] Index of Rentals
+  - [x] Add New / Create 
+  - [x] Edit / Update
+  - [x] Delete
 - [ ] Car Rental Form (User Facing)
-	- [ ] Location of Rental (Austin, Temple, etc.)
-	- [ ] Delivery Needed (Y/N)
-	- [ ] Car Type with Descriptions and Pricing 
-	- [ ] Rental Start Date
-	- [ ] Rental End Date
+	- [x] Location of Rental (Austin, Temple, etc.)
+	- [x] Delivery Needed (Y/N)
+	- [x] Car Type with Descriptions and Pricing 
+	- [x] Rental Start Date
+	- [x] Rental End Date
 	- [ ] On submission of form, return Customer entered information and a summary of charges. (Days rented @ $$ per day. Additional fees, Taxes.)
 
 ### Stretch Goals:
