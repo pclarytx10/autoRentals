@@ -4,6 +4,15 @@ const rentalRouter = express.Router();
 const Rentals = require('../models/rentals.js');
 
 // Routes
+// Seed
+const rentalsSeed = require('../models/rentalSeed.js')    
+rentalRouter.get('/seed', (req, res) => {
+    Rentals.deleteMany({}, (error, allRentals) => {})
+    Rentals.create(rentalsSeed, (error, data) => {
+        res.redirect('/rentals')
+    })
+})
+
 // Index Route
 rentalRouter.get('/', (req,res) => {
     Rentals.find({}, (err, allRentals) => {     
