@@ -1,0 +1,50 @@
+vehicle 
+customer 
+rentalStartDate 
+deliveryNeeded 
+totalCost 
+rentalLocation 
+rentalStatus 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs')%>
+</head>
+<body>
+    <div class="body-overlay">
+        <header>
+            <%- include('../partials/header.ejs')%>
+        </header>
+    <main>
+        <div class="container">
+            <h1>Edit <%=rental._id%></h1>
+            <form action="/rentals/<%=rental._id%>?_method=PUT" method="POST">
+                <label for="_id">ID: </label>
+                <input type="text" name="_id" value="<%=rental._id%>" /><br />
+                <label for="vehicle">Vehicle: </label>
+                <input type="text" name="vehicle" value="<%=rental.vehicle%>" /><br />
+                <label for="customer">Customer: </label>
+                <input type="text" name="customer" value="<%=rental.customer%>" /><br /> 
+                <label for="rentalStartDate">Rental Start Date: </label>
+                <input type="text" name="rentalStartDate" value="<%=rental.rentalStartDate%>" /><br /> 
+                <label for="rentalEndDate">Rental End Date: </label>
+                <input type="text" name="rentalEndDate" value="<%=rental.rentalEndDate%>" /><br /> 
+                <label for="deliveryNeeded">Denlivery Needed: </label>
+                <input type="text" name="deliveryNeeded" value="<%=rental.deliveryNeeded%>" /><br /> 
+                <label for="totalCost">Total Cost: </label>
+                <input type="text" name="totalCost" value="<%=rental.totalCost%>" /><br /> 
+                <label for="rentalLocation">Rental Location: </label>
+                <input type="text" name="rentalLocation" value="<%=rental.rentalLocation%>" /><br /> 
+                <label for="rentalStatus">Rental Status: </label>
+                <input type="text" name="rentalStatus" value="<%=rental.rentalStatus%>" /><br /> 
+                <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
+            </form>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs')%>
+    </footer>
+    </div>
+  </body>
+</html>

@@ -19,18 +19,36 @@ rentalRouter.get('/new', (req,res) => {
 })
 
 // Delete Route
+rentalRouter.delete('/:id', (req,res) => {
+    Rentals.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect('/rentals')
+    })
+})
 
 // Update Route
+rentalRouter.put('/:id', (req,res) => {
+    Rentals.findByIdAndUpdate(req.params.id, 
+        req.body , {new:true}, 
+        (err, updatedModel) => {
+            res.redirect('/rentals')
+        })
+})
 
 // Create Route
 rentalRouter.post('/', (req,res) => {
-    console.log(req.body)
     Rentals.create(req.body, (error, createdRental) => {
         res.redirect('/rentals')
     })
 })
 
-// Export Router
+// Edit Route
+rentalRouter.get('/:id/edit', (req,res) => {
+    Rentals.findById(req.params.id, (err, foundRental) => { 
+        res.render('rentals/edit.ejs', {
+            rental: foundRental
+        })
+    })
+})
 
 // Show Route
 rentalRouter.get('/:id', (req,res) => {
