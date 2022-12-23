@@ -51,7 +51,7 @@ const cars = [
         model: "Grand Cherokee",
         year:  "2022",
         color: "Black",
-        mileage: 2500,
+        mileage: 7100,
         seats: "5",
         doors: "4",
         type: "Fullsize SUV",

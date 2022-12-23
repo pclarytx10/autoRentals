@@ -6,7 +6,8 @@ Dpremium Rentals is a website for a small car rental business. The site should h
 - Bootstrap
 - JavaScript / jQuery
 - Node
-- Express / React
+- Express 
+- Bcrypt
 - MongoDB / Mongoose
 
 ## Screenshot(s):
