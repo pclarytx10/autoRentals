@@ -19,6 +19,11 @@ userRouter.get('/new', (req,res) => {
 })
 
 // Delete Route
+userRouter.delete('/:id', (req,res) => {
+    Users.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect('/users')
+    })
+})
 
 // Update Route
 
