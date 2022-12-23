@@ -1,10 +1,8 @@
 // Dependencies
 const express = require("express")
 const app = express()
-// const cars = require("./models/cars.js"); 
+const session = require("express-session")
 const mongoose = require("mongoose")
-//const Vehicles = require("./models/vehicles.js");
-//const Rentals = require("./models/rentals.js");
 const methodOverride = require("method-override")
 app.use(express.static('public'));
 
@@ -22,6 +20,11 @@ db.on("connected", () => console.log("mongo connected"))
 // Middleware
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride("_method"))
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
 
 // Controllers
 const vehiclesController = require('./controllers/vehicles.js')
