@@ -11,14 +11,13 @@
         <main>
             <div class="container">
                 <h1>Login</h1>
-                <form action='/sessions' method='POST'>
+                <form id="loginForm" action='/sessions' method='POST'>
                     <label for="email">Email:</label>
                     <input type="email" name="email" id="email" />
             
                     <label for="password">Password:</label>
                     <input type="password" name="password" id="password" />
-            
-                    <input type="submit" value="Login">
+                    <input class="btn btn-success btn-sm" type="submit" value="Login">
                 </form>
             </div>   
         </main>

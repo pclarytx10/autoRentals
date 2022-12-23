@@ -30,8 +30,8 @@ const rentalsController = require('./controllers/rentals.js')
 app.use('/rentals', rentalsController)
 const usersController = require('./controllers/users.js')
 app.use('/users', usersController)
-app.use('/sessions', sessionsController)
 const sessionsController = require('./controllers/sessions.js')
+app.use('/sessions', sessionsController)
 
 // Root Route
 app.get('/', (req,res) => {

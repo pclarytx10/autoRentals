@@ -140,3 +140,11 @@ font-size: 0.9em;
 letter-spacing: 0.1em;
 color: rgb(3, 30, 96);
 }
+/* ================ */
+/*     Login       */
+/* ================ */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
