@@ -30,6 +30,11 @@ userRouter.delete('/:id', (req,res) => {
 
 // Update Route
 userRouter.put('/:id', (req,res) => {
+    // Hash the password if it is not already hashed
+    if(req.body.password.substring(0,3) !== '$2b'){
+        req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+    } 
+     
     Users.findByIdAndUpdate(req.params.id,
         req.body, {new:true},
         (err, updatedModel) => {
