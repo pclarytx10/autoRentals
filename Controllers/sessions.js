@@ -14,8 +14,25 @@ sessionsRouter.get('/login', (req,res) => {
 })
 
 // Delete Route
+sessionsRouter.delete('/', (req,res) => {
+    req.session.destroy(() => {
+        res.redirect('/sessions/login')
+    })
+})
 
 // Create Route
+sessionsRouter.post('/', (req,res) => {
+    Users.findOne({
+        email: req.body.email}, 
+        (err, foundUser) => {
+            if(bcrypt.compareSync(req.body.password, foundUser.password)){
+                req.session.currentUser = foundUser;
+                res.redirect('/users')
+            } else {
+                res.send('Wrong password')
+            }
+        })
+})
 
 // Export
 module.exports = sessionsRouter;
