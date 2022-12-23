@@ -35,9 +35,7 @@ vehicleRouter.get('/new', (req,res) => {
 // Delete Route
 vehicleRouter.delete('/:id', (req,res) => {
     Vehicles.findByIdAndDelete(req.params.id, (err, data) => {
-        res.redirect('/cars', {
-            currentUser: req.session.currentUser
-        })
+        res.redirect('/cars')
     })
 })
 
@@ -51,9 +49,7 @@ vehicleRouter.put('/:id', (req,res) => {
     Vehicles.findByIdAndUpdate(req.params.id, 
         req.body, {new:true}, 
         (err, updatedVehicle) => {
-            res.redirect(`/cars/${req.params.id}`, {
-                currentUser: req.session.currentUser
-            })
+            res.redirect(`/cars/${req.params.id}`)
         })
 })
 

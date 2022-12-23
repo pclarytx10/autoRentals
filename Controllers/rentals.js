@@ -35,9 +35,7 @@ rentalRouter.get('/new', (req,res) => {
 // Delete Route
 rentalRouter.delete('/:id', (req,res) => {
     Rentals.findByIdAndRemove(req.params.id, (err, data) => {
-        res.redirect('/rentals', {
-            currentUser: req.session.currentUser
-        })
+        res.redirect('/rentals')
     })
 })
 
@@ -46,9 +44,7 @@ rentalRouter.put('/:id', (req,res) => {
     Rentals.findByIdAndUpdate(req.params.id, 
         req.body , {new:true}, 
         (err, updatedModel) => {
-            res.redirect('/rentals', {
-                currentUser: req.session.currentUser
-            })
+            res.redirect('/rentals')
         })
 })
 

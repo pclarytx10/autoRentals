@@ -24,9 +24,7 @@ userRouter.get('/new', (req,res) => {
 // Delete Route
 userRouter.delete('/:id', (req,res) => {
     Users.findByIdAndRemove(req.params.id, (err, data) => {
-        res.redirect('/users', {
-            currentUser: req.session.currentUser
-        })
+        res.redirect('/users')
     })
 })
 
@@ -35,9 +33,7 @@ userRouter.put('/:id', (req,res) => {
     Users.findByIdAndUpdate(req.params.id,
         req.body, {new:true},
         (err, updatedModel) => {
-            res.redirect('/users', {
-                currentUser: req.session.currentUser
-            })
+            res.redirect('/users')
         })
 })
 
