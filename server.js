@@ -56,7 +56,6 @@ app.get('/terms', (req,res) => {
 })
 
 // Listen
-const PORT = process.env.PORT
 app.listen(PORT, () => {
     console.log("Fast cars, slow cars...")
 })
