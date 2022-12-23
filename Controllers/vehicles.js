@@ -9,7 +9,9 @@ vehicleRouter.get('/seed', (req, res) => {
 	Vehicles.deleteMany({}, (error, allVehicles) => {})
 
 	Vehicles.create(carsSeed, (error, data) => {
-		res.redirect('/cars')
+		res.redirect('/cars', {
+            currentUser: req.session.currentUser
+        })
 	})
 })
 
@@ -18,19 +20,24 @@ vehicleRouter.get('/', (req,res) => {
     Vehicles.find({}, (err, allVehicles) => {
         res.render('vehicles/index.ejs', {
             vehicles: allVehicles,
+            currentUser: req.session.currentUser
         })
     })
 })
 
 // New Route
 vehicleRouter.get('/new', (req,res) => {
-    res.render('vehicles/new.ejs')
+    res.render('vehicles/new.ejs', {
+        currentUser: req.session.currentUser
+    })
 })
 
 // Delete Route
 vehicleRouter.delete('/:id', (req,res) => {
     Vehicles.findByIdAndDelete(req.params.id, (err, data) => {
-        res.redirect('/cars')
+        res.redirect('/cars', {
+            currentUser: req.session.currentUser
+        })
     })
 })
 
@@ -44,7 +51,9 @@ vehicleRouter.put('/:id', (req,res) => {
     Vehicles.findByIdAndUpdate(req.params.id, 
         req.body, {new:true}, 
         (err, updatedVehicle) => {
-            res.redirect(`/cars/${req.params.id}`)
+            res.redirect(`/cars/${req.params.id}`, {
+                currentUser: req.session.currentUser
+            })
         })
 })
 
@@ -56,7 +65,9 @@ vehicleRouter.post('/', (req,res) => {
         req.body.photos = req.body.photos.split(',')
     }
     Vehicles.create(req.body, (err, createdVehicle) => {
-        res.redirect('/cars')   
+        res.redirect('/cars', {
+            currentUser: req.session.currentUser
+        })   
     })
 })
 
@@ -65,6 +76,7 @@ vehicleRouter.get('/:id/edit', (req,res) => {
     Vehicles.findById(req.params.id, (err, foundVehicle) => {
         res.render('vehicles/edit.ejs', {
             vehicle: foundVehicle,
+            currentUser: req.session.currentUser
         })
     })
 })
@@ -74,6 +86,7 @@ vehicleRouter.get('/:id', (req,res) => {
     Vehicles.findById(req.params.id, (err, foundVehicle) => {
         res.render('vehicles/show.ejs', {
             vehicle: foundVehicle,
+            currentUser: req.session.currentUser
         })
     })
 })
