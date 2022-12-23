@@ -8,7 +8,9 @@ const Users = require('../models/users.js');
 
 // New Route
 sessionsRouter.get('/login', (req,res) => {
-    res.render('sessions/new.ejs')
+    res.render('sessions/new.ejs', {
+        currentUser: req.session.currentUser
+    })
 })
 
 // Delete Route
