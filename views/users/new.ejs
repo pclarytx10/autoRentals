@@ -11,6 +11,17 @@
     <main>
         <div class="container">
             <h3>Users New</h3>
+            <form action="/users" method="POST">
+                <input type="text" name="email" placeholder="Email" /><br />
+                <input type="text" name="password" placeholder="Password" /><br />
+                <input type="text" name="firstName" placeholder="First Name" /><br />
+                <input type="text" name="lastName" placeholder="Last Name" /><br />
+                <input type="text" name="addressStreet" placeholder="Street Address" /><br />
+                <input type="text" name="addressCity" placeholder="City" /><br />
+                <input type="text" name="addressState" placeholder="State (2 letter abbreviation)" /><br />
+                <input type="text" name="addressZip" placeholder="Zip" /><br />
+                <input class="btn btn-primary btn-sm" type="submit" value="Create" />
+            </form>
         </div>   
     </main>
     <footer>

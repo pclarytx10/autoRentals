@@ -24,6 +24,7 @@ userRouter.get('/new', (req,res) => {
 
 // Create Route
 userRouter.post('/', (req,res) => {
+    // Hash the password
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     Users.create(req.body, (error, createdUser) => {
         res.redirect('/users')
