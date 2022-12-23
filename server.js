@@ -32,7 +32,7 @@ app.use(session({
 }))
 
 // Controllers
-const vehiclesController = require('./controllers/vehicles.js')
+const vehiclesController = require('./controllers/vehicles2.js')
 app.use('/cars', vehiclesController)
 const rentalsController = require('./controllers/rentals.js')
 app.use('/rentals', rentalsController)
