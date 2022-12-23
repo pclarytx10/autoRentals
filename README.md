@@ -56,12 +56,12 @@ A live version of this app is hosted on [Github.io.](https://pclarytx10.github.i
 
 ### Stretch Goals:
 - [x] A Model for Customer / Login Information (Profile)
-  - [ ] Model Hosted on Atlas
-- [ ] Full CRUD for Profile Model
-  - [ ] Index of Profiles
-  - [ ] Add New / Create 
-  - [ ] Edit / Update
-  - [ ] Delete
+  - [x] Model Hosted on Atlas
+- [x] Full CRUD for Profile Model
+  - [x] Index of Profiles
+  - [x] Add New / Create 
+  - [x] Edit / Update
+  - [x] Delete
 - [ ] Customer Login
   - [ ] Password Encrypted with Bcrypt
   - [ ] User Sessions  
