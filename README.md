@@ -62,9 +62,9 @@ A live version of this app is hosted on [Github.io.](https://pclarytx10.github.i
   - [x] Add New / Create 
   - [x] Edit / Update
   - [x] Delete
-- [ ] Customer Login
-  - [ ] Password Encrypted with Bcrypt
-  - [ ] User Sessions  
+- [x] Customer Login
+  - [x] Password Encrypted with Bcrypt
+  - [x] User Sessions  
 - [ ] Forms and Pages based on User Permissions (User, Admin)
 - [ ] Customer views based on submitted rentals. Customer A can not see Customer B's rentals. etc.  
 - [ ] Customer Registration (User Facing)

@@ -23,7 +23,12 @@ app.use(methodOverride("_method"))
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: { 
+        secure: false,            //setting this false for http connections
+        maxAge: 3600000,
+        expires: new Date(Date.now() + 3600000) 
+    }
 }))
 
 // Controllers
