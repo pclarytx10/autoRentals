@@ -3,8 +3,8 @@ const express = require("express")
 const app = express()
 // const cars = require("./models/cars.js"); 
 const mongoose = require("mongoose")
-const Vehicles = require("./models/vehicles.js");
-const Rentals = require("./models/rentals.js");
+//const Vehicles = require("./models/vehicles.js");
+//const Rentals = require("./models/rentals.js");
 const methodOverride = require("method-override")
 app.use(express.static('public'));
 
@@ -28,6 +28,8 @@ const vehiclesController = require('./controllers/vehicles.js')
 app.use('/cars', vehiclesController)
 const rentalsController = require('./controllers/rentals.js')
 app.use('/rentals', rentalsController)
+const usersController = require('./controllers/users.js')
+app.use('/users', usersController)
 
 // Root Route
 app.get('/', (req,res) => {
