@@ -55,7 +55,7 @@ A live version of this app is hosted on [Github.io.](https://pclarytx10.github.i
 	- [ ] On submission of form, return Customer entered information and a summary of charges. (Days rented @ $$ per day. Additional fees, Taxes.)
 
 ### Stretch Goals:
-- [ ] A Model for Customer / Login Information (Profile)
+- [x] A Model for Customer / Login Information (Profile)
   - [ ] Model Hosted on Atlas
 - [ ] Full CRUD for Profile Model
   - [ ] Index of Profiles
@@ -63,6 +63,8 @@ A live version of this app is hosted on [Github.io.](https://pclarytx10.github.i
   - [ ] Edit / Update
   - [ ] Delete
 - [ ] Customer Login
+  - [ ] Password Encrypted with Bcrypt
+  - [ ] User Sessions  
 - [ ] Forms and Pages based on User Permissions (User, Admin)
 - [ ] Customer views based on submitted rentals. Customer A can not see Customer B's rentals. etc.  
 - [ ] Customer Registration (User Facing)

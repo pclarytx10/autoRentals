@@ -10,10 +10,24 @@
     </header>
     <main>
         <div class="container">
-            <h3>Users Index</h3>
+            <h3>Available Users</h3>
+            <ul>
+              <% let listString = renderList(users) %>
+              <%- listString %>
+            </ul>
+            <a class="btn btn-success btn-sm" href="/users/new">Add a User</a></li>
+     
         </div>   
     </main>
     <footer>
         <%- include('../partials/footer.ejs')%>
     </footer>
 </body>
+
+<% function renderList(arrList) { %>
+    <%   let listString = []  %>
+    <%   arrList.forEach((user, index) => {  %>
+    <%        listString.push('<li><a href="/users/' + user._id + '">' + user.email + '</a></li>') %>
+    <%    }) %>
+    <%    return listString.join(" ")  %>
+    <% } %>
