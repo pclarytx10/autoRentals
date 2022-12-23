@@ -51,9 +51,7 @@ rentalRouter.put('/:id', (req,res) => {
 // Create Route
 rentalRouter.post('/', (req,res) => {
     Rentals.create(req.body, (error, createdRental) => {
-        res.redirect('/rentals', {
-            currentUser: req.session.currentUser
-        })
+        res.redirect('/rentals')
     })
 })
 

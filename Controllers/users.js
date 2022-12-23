@@ -47,9 +47,7 @@ userRouter.post('/', (req,res) => {
     // Hash the password
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     Users.create(req.body, (error, createdUser) => {
-        res.redirect('/users', {
-            currentUser: req.session.currentUser
-        })
+        res.redirect('/users')
     })
 })
 

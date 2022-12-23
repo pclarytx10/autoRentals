@@ -61,9 +61,7 @@ vehicleRouter.post('/', (req,res) => {
         req.body.photos = req.body.photos.split(',')
     }
     Vehicles.create(req.body, (err, createdVehicle) => {
-        res.redirect('/cars', {
-            currentUser: req.session.currentUser
-        })   
+        res.redirect('/cars')   
     })
 })
 
