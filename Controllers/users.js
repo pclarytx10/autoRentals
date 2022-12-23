@@ -34,7 +34,13 @@ userRouter.post('/', (req,res) => {
 // Edit Route
 
 // Show Route
-
+userRouter.get('/:id', (req,res) => {
+    Users.findById(req.params.id, (err, foundUser) => {
+        res.render('users/show.ejs', {
+            user: foundUser
+        })
+    })
+})
 
 // Export Router
 module.exports = userRouter;

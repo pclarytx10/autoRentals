@@ -10,10 +10,29 @@
     </header>
     <main>
         <div class="container">
-            <h3>Users Show</h3>
+            <h3>User: <%=user._id %></h3>
+            <ul>
+                <% let userData = renderObjs(user) %>
+                <%- userData %> 
+            </ul>
+            <a href="/users/<%=user._id; %>/edit">Edit</a>
+            <form  action="/users/<%=user._id; %>?_method=DELETE" method="POST">
+                <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+       
         </div>   
     </main>
     <footer>
         <%- include('../partials/footer.ejs')%>
     </footer>
 </body>
+
+<% function renderObjs(arrObj) { %>
+<%   let listString = []  %>
+<%   let user =  JSON.parse(JSON.stringify(arrObj)) %>
+<%   delete user.__v %>  
+<%   delete user._id %>  
+<%   for (const [key, value] of Object.entries(user)) { %>
+<%     listString.push('<li>' + `${key}: ` + `${value}` + '</li>') %>
+<%   } %>
+<%   return listString.join("")  %>
+<% } %>
