@@ -20,8 +20,6 @@ rentalStatus
         <div class="container">
             <h1>Edit <%=rental._id%></h1>
             <form action="/rentals/<%=rental._id%>?_method=PUT" method="POST">
-                <label for="_id">ID: </label>
-                <input type="text" name="_id" value="<%=rental._id%>" /><br />
                 <label for="vehicle">Vehicle: </label>
                 <input type="text" name="vehicle" value="<%=rental.vehicle%>" /><br />
                 <label for="customer">Customer: </label>
