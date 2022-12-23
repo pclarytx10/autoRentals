@@ -11,7 +11,7 @@
     <main>
         <div class="container">
             <h3>Edit User: <%=user._id %></h3>
-            <form action="/rentals/<%=user._id%>?_method=PUT" method="POST">
+            <form action="/users/<%=user._id%>?_method=PUT" method="POST">
                 <input type="text" name="email" value="<%=user.email%>" /><br />
                 <input type="password" name="password" value="<%=user.password%>" /><br />
                 <input type="text" name="firstName" value="<%=user.firstName%>" /><br />

@@ -26,6 +26,13 @@ userRouter.delete('/:id', (req,res) => {
 })
 
 // Update Route
+userRouter.put('/:id', (req,res) => {
+    Users.findByIdAndUpdate(req.params.id,
+        req.body, {new:true},
+        (err, updatedModel) => {
+            res.redirect('/users')
+        })
+})
 
 // Create Route
 userRouter.post('/', (req,res) => {
