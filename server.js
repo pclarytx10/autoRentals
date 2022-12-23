@@ -38,12 +38,16 @@ app.use('/sessions', sessionsController)
 
 // Root Route
 app.get('/', (req,res) => {
-    res.render('home.ejs')
+    res.render('home.ejs', {
+        currentUser: req.session.currentUser
+    })
 })
 
 // Terms Route
 app.get('/terms', (req,res) => {
-    res.render('terms.ejs')
+    res.render('terms.ejs', {
+        currentUser: req.session.currentUser
+    })
 })
 
 // Listen

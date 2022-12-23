@@ -8,20 +8,25 @@ const bcrypt = require('bcrypt');
 userRouter.get('/', (req,res) => {
     Users.find({}, (err, allUsers) => {
         res.render('users/index.ejs', {
-            users: allUsers
+            users: allUsers,
+            currentUser: req.session.currentUser
         })
     })
 })
 
 // New Route
 userRouter.get('/new', (req,res) => {
-    res.render('users/new.ejs')
+    res.render('users/new.ejs', {
+        currentUser: req.session.currentUser
+    })
 })
 
 // Delete Route
 userRouter.delete('/:id', (req,res) => {
     Users.findByIdAndRemove(req.params.id, (err, data) => {
-        res.redirect('/users')
+        res.redirect('/users', {
+            currentUser: req.session.currentUser
+        })
     })
 })
 
@@ -30,7 +35,9 @@ userRouter.put('/:id', (req,res) => {
     Users.findByIdAndUpdate(req.params.id,
         req.body, {new:true},
         (err, updatedModel) => {
-            res.redirect('/users')
+            res.redirect('/users', {
+                currentUser: req.session.currentUser
+            })
         })
 })
 
@@ -39,7 +46,9 @@ userRouter.post('/', (req,res) => {
     // Hash the password
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     Users.create(req.body, (error, createdUser) => {
-        res.redirect('/users')
+        res.redirect('/users', {
+            currentUser: req.session.currentUser
+        })
     })
 })
 
@@ -47,7 +56,8 @@ userRouter.post('/', (req,res) => {
 userRouter.get('/:id/edit', (req,res) => {
     Users.findById(req.params.id, (err, foundUser) => {
         res.render('users/edit.ejs', {
-            user: foundUser
+            user: foundUser,
+            currentUser: req.session.currentUser
         })
     })
 })
@@ -56,7 +66,8 @@ userRouter.get('/:id/edit', (req,res) => {
 userRouter.get('/:id', (req,res) => {
     Users.findById(req.params.id, (err, foundUser) => {
         res.render('users/show.ejs', {
-            user: foundUser
+            user: foundUser,
+            currentUser: req.session.currentUser,
         })
     })
 })
