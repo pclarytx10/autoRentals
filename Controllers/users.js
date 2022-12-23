@@ -32,6 +32,13 @@ userRouter.post('/', (req,res) => {
 })
 
 // Edit Route
+userRouter.get('/:id/edit', (req,res) => {
+    Users.findById(req.params.id, (err, foundUser) => {
+        res.render('users/edit.ejs', {
+            user: foundUser
+        })
+    })
+})
 
 // Show Route
 userRouter.get('/:id', (req,res) => {
