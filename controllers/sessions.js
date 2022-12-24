@@ -8,6 +8,7 @@ const Users = require('../models/users.js');
 
 // New Route
 sessionsRouter.get('/login', (req,res) => {
+    console.log('new session')
     res.render('sessions/new.ejs', {
         currentUser: req.session.currentUser
     })
@@ -15,6 +16,7 @@ sessionsRouter.get('/login', (req,res) => {
 
 // Delete Route
 sessionsRouter.delete('/', (req,res) => {
+    console.log('end session')
     req.session.destroy(() => {
         res.redirect('/sessions/login')
     })
@@ -22,6 +24,7 @@ sessionsRouter.delete('/', (req,res) => {
 
 // Create Route
 sessionsRouter.post('/', (req,res) => {
+    console.log('create session')
     Users.findOne({
         email: req.body.email}, 
         (err, foundUser) => {

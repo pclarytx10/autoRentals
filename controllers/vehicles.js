@@ -9,9 +9,7 @@ vehicleRouter.get('/seed', (req, res) => {
 	Vehicles.deleteMany({}, (error, allVehicles) => {})
 
 	Vehicles.create(carsSeed, (error, data) => {
-		res.redirect('/cars', {
-            currentUser: req.session.currentUser
-        })
+		res.redirect('/cars')
 	})
 })
 
@@ -19,17 +17,14 @@ vehicleRouter.get('/seed', (req, res) => {
 vehicleRouter.get('/', (req,res) => {
     Vehicles.find({}, (err, allVehicles) => {
         res.render('vehicles/index.ejs', {
-            vehicles: allVehicles,
-            currentUser: req.session.currentUser
+            vehicles: allVehicles
         })
     })
 })
 
 // New Route
 vehicleRouter.get('/new', (req,res) => {
-    res.render('vehicles/new.ejs', {
-        currentUser: req.session.currentUser
-    })
+    res.render('vehicles/new.ejs')
 })
 
 // Delete Route
@@ -69,8 +64,7 @@ vehicleRouter.post('/', (req,res) => {
 vehicleRouter.get('/:id/edit', (req,res) => {
     Vehicles.findById(req.params.id, (err, foundVehicle) => {
         res.render('vehicles/edit.ejs', {
-            vehicle: foundVehicle,
-            currentUser: req.session.currentUser
+            vehicle: foundVehicle
         })
     })
 })
@@ -79,8 +73,7 @@ vehicleRouter.get('/:id/edit', (req,res) => {
 vehicleRouter.get('/:id', (req,res) => {
     Vehicles.findById(req.params.id, (err, foundVehicle) => {
         res.render('vehicles/show.ejs', {
-            vehicle: foundVehicle,
-            currentUser: req.session.currentUser
+            vehicle: foundVehicle
         })
     })
 })

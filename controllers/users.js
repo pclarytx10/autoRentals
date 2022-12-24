@@ -8,17 +8,14 @@ const bcrypt = require('bcrypt');
 userRouter.get('/', (req,res) => {
     Users.find({}, (err, allUsers) => {
         res.render('users/index.ejs', {
-            users: allUsers,
-            currentUser: req.session.currentUser
+            users: allUsers
         })
     })
 })
 
 // New Route
 userRouter.get('/new', (req,res) => {
-    res.render('users/new.ejs', {
-        currentUser: req.session.currentUser
-    })
+    res.render('users/new.ejs')
 })
 
 // Delete Route
@@ -55,8 +52,7 @@ userRouter.post('/', (req,res) => {
 userRouter.get('/:id/edit', (req,res) => {
     Users.findById(req.params.id, (err, foundUser) => {
         res.render('users/edit.ejs', {
-            user: foundUser,
-            currentUser: req.session.currentUser
+            user: foundUser
         })
     })
 })
@@ -65,8 +61,7 @@ userRouter.get('/:id/edit', (req,res) => {
 userRouter.get('/:id', (req,res) => {
     Users.findById(req.params.id, (err, foundUser) => {
         res.render('users/show.ejs', {
-            user: foundUser,
-            currentUser: req.session.currentUser,
+            user: foundUser
         })
     })
 })
