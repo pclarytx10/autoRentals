@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs')%>
+    </head>
+    <body>
+      <div class="body-overlay">
+        <header>
+            <%- include('../partials/header.ejs')%>
+        </header>
+        <main>
+            <div class="container">
+                <h1>Logout</h1>
+                <form id="logoutForm" action="/sessions?_method=DELETE" method="POST">
+                    <p>Are you sure you would like to end your session?</p>
+                    <input class="btn btn-danger btn-sm" type="submit" value="Log Out">
+                </form>
+            </div>   
+        </main>
+        <footer>
+            <%- include('../partials/footer.ejs')%>
+        </footer>
+    </body>
+</html>

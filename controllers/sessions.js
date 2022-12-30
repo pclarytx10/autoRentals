@@ -37,5 +37,13 @@ sessionsRouter.post('/', (req,res) => {
         })
 })
 
+// Show Route
+sessionsRouter.get('/logout', (req,res) => {
+    console.log('logout page')
+    res.render('sessions/logout.ejs', {
+        currentUser: req.session.currentUser
+    })
+})
+
 // Export
 module.exports = sessionsRouter;

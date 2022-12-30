@@ -3,7 +3,6 @@ const express = require("express")
 const app = express()
 const session = require("express-session")
 const methodOverride = require("method-override")
-app.use(express.static('public'));
 const mongoose = require("mongoose")
 const MongoDBStore = require('connect-mongodb-session')(session)
 // const flash = require("connect-flash")
@@ -36,12 +35,13 @@ store.on('error', function(error) {
 )
 
 // Middleware
-app.use(methodOverride("_method"))
+app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
+app.use(methodOverride("_method"))
 app.use(session({
     secret: process.env.SECRET,
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
       },
@@ -51,7 +51,6 @@ app.use(session({
 //     res.locals.currentUser = req.session.currentUser
 //     next()
 // })
-// app.use(flash())
     
 
 // Controllers
