@@ -5,7 +5,7 @@ const session = require("express-session")
 const methodOverride = require("method-override")
 const mongoose = require("mongoose")
 const MongoDBStore = require('connect-mongodb-session')(session)
-const morgan = require("morgan")
+const morgan = require("morgan") // HTTP request logger middleware for node.js
 
 // Environment Variables
 require("dotenv").config()
