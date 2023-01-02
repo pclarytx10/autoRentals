@@ -15,7 +15,6 @@ rentalRouter.get('/seed', (req, res) => {
 
 // Index Route
 rentalRouter.get('/', (req,res) => {
-    console.log('Rentals Index')
     Rentals.find({}, (err, allRentals) => {     
     res.render('rentals/index.ejs', {
         rentals: allRentals
@@ -25,7 +24,6 @@ rentalRouter.get('/', (req,res) => {
 
 // New Route
 rentalRouter.get('/new', (req,res) => {
-    console.log('New Rental');
     res.render('rentals/new.ejs')
 })
 
@@ -38,7 +36,6 @@ rentalRouter.delete('/:id', (req,res) => {
 
 // Update Route
 rentalRouter.put('/:id', (req,res) => {
-    console.log('Rentals Update')
     Rentals.findByIdAndUpdate(req.params.id, 
         req.body , {new:true}, 
         (err, updatedModel) => {
@@ -48,7 +45,6 @@ rentalRouter.put('/:id', (req,res) => {
 
 // Create Route
 rentalRouter.post('/', (req,res) => {
-    console.log('Create a rental');
     Rentals.create(req.body, (error, createdRental) => {
         res.redirect('rentals/')
     })
@@ -56,7 +52,6 @@ rentalRouter.post('/', (req,res) => {
 
 // Edit Route
 rentalRouter.get('/:id/edit', (req,res) => {
-    console.log('Rental Edit')
     Rentals.findById(req.params.id, (err, foundRental) => { 
         res.render('rentals/edit.ejs', {
             rental: foundRental
@@ -66,7 +61,6 @@ rentalRouter.get('/:id/edit', (req,res) => {
 
 // Show Route
 rentalRouter.get('/:id', (req,res) => {
-    console.log('Rental Show')
     Rentals.findById(req.params.id, (err, foundRental) => {
         res.render('rentals/show.ejs', {
             rental: foundRental

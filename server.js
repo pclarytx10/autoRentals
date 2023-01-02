@@ -5,7 +5,7 @@ const session = require("express-session")
 const methodOverride = require("method-override")
 const mongoose = require("mongoose")
 const MongoDBStore = require('connect-mongodb-session')(session)
-// const flash = require("connect-flash")
+const morgan = require("morgan")
 
 // Environment Variables
 require("dotenv").config()
@@ -37,7 +37,7 @@ store.on('error', function(error) {
 // Middleware
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
-app.use(methodOverride("_method"))
+app.use(methodOverride('_method'))
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
@@ -47,11 +47,10 @@ app.use(session({
       },
       store: store,
 }))
-// app.use(function(req, res, next){
-//     res.locals.currentUser = req.session.currentUser
-//     next()
-// })
-    
+// Mogan middleware for logging HTTP requests
+if (process.env.NODE_ENV !== 'production') {
+    app.use(morgan('dev'))
+}
 
 // Controllers
 const vehiclesController = require('./controllers/vehicles.js')
@@ -65,7 +64,6 @@ app.use('/sessions', sessionsController)
 
 // Root Route
 app.get('/', (req,res) => {
-    console.log('Root Route');
     res.render('home.ejs')
 })
 
