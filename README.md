@@ -26,12 +26,12 @@ Dpremium Rentals is a website for a small car rental business. The site should h
 ![Schedule Rental](/wireframes/Schedule-Rental.png)
 
 ## Getting Started: 
-A live version of this app is hosted on [Github.io.](https://pclarytx10.github.io) < more instructions coming >
+A live version of this app is hosted on [Heroku.](https://autorentals.herokuapp.com/) 
 
 [Trello Board](https://trello.com/b/Dtdt7fmv/auto-rentals-website)
 
 ### Features:
-- [ ] Site Hosted on Heroku 
+- [x] Site Hosted on Heroku 
 - [x] Company Landing Page (About, Locations, Cars)
   - [x] Root "/" route
 - [x] A Model for Vehicles
@@ -47,21 +47,21 @@ A live version of this app is hosted on [Github.io.](https://pclarytx10.github.i
   - [x] Add New / Create 
   - [x] Edit / Update
   - [x] Delete
-- [ ] Car Rental Form (User Facing)
+- [x] Car Rental Form (User Facing)
 	- [x] Location of Rental (Austin, Temple, etc.)
 	- [x] Delivery Needed (Y/N)
 	- [x] Car Type with Descriptions and Pricing 
 	- [x] Rental Start Date
 	- [x] Rental End Date
-	- [ ] On submission of form, return Customer entered information and a summary of charges. (Days rented @ $$ per day. Additional fees, Taxes.)
-
+	
 ### Stretch Goals:
+- [ ] Automation of Rental form, return Customer entered information and a summary of charges. (Days rented @ $$ per day. Additional fees, Taxes.)
 - [x] Carosel for Vehicle Images
   - [ ] Vehicle Index Page
   - [x] Vehicle Show Page
 - [x] A Model for Customer / Login Information (Profile)
   - [x] Model Hosted on Atlas
-- [x] Full CRUD for Profile Model
+- [x] Full CRUD for User Profile Model
   - [x] Index of Profiles
   - [x] Add New / Create 
   - [x] Edit / Update
