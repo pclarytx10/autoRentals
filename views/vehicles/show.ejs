@@ -72,14 +72,6 @@
 <%   return listString.join("")  %>
 <% } %>
 
-<% function renderImages(photoEntries) { %>
-    <%     let photosList = [] %>
-    <%     photoEntries.forEach(element => {
-        photosList.push('<img src="' + '/images/' + element + '" width="250">' )
-            })%>
-    <%   return photosList.join("") %>
-<% } %>
-
 <% function renderSlides(slideEntries) { %>
     <%     let slideList = [] %>
     <%     slideEntries.forEach(element => {

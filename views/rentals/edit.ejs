@@ -21,14 +21,23 @@
                 <input type="text" name="rentalStartDate" value="<%=rental.rentalStartDate%>" /><br /> 
                 <label for="rentalEndDate">Rental End Date: </label>
                 <input type="text" name="rentalEndDate" value="<%=rental.rentalEndDate%>" /><br /> 
-                <label for="deliveryNeeded">Denlivery Needed: </label>
-                <input type="text" name="deliveryNeeded" value="<%=rental.deliveryNeeded%>" /><br /> 
+                <label for="deliveryNeeded">Delivery Needed: </label>
+                <select name="deliveryNeeded" value="<%=rental.deliveryNeeded%>">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select><br> 
                 <label for="totalCost">Total Cost: </label>
                 <input type="text" name="totalCost" value="<%=rental.totalCost%>" /><br /> 
                 <label for="rentalLocation">Rental Location: </label>
                 <input type="text" name="rentalLocation" value="<%=rental.rentalLocation%>" /><br /> 
                 <label for="rentalStatus">Rental Status: </label>
-                <input type="text" name="rentalStatus" value="<%=rental.rentalStatus%>" /><br /> 
+                <select name="rentalStatus" value="<%=rental.rentalStatus%>">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Awaiting Check-in">Awaiting Check-in</option>
+                    <option value="Completed">Completed</option>
+                </select><br>
+                <!-- <input type="text" name="rentalStatus" value="<%=rental.rentalStatus%>" /><br />  -->
                 <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
             </form>
         </div>

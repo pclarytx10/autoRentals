@@ -118,6 +118,14 @@ input[type="text"], input[type="submit"] {
     box-shadow: 1px 1px 2px #ddd;
     margin: 0.5em 0;
 }
+select {
+    width: 100%;
+    padding: 1em;
+    border: 0px;
+    border-radius: 0.5em;
+    box-shadow: 1px 1px 2px #ddd;
+    margin: 0.5em 0;
+}
 #termsList > li {
     text-align: left;
 }

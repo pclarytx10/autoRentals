@@ -16,10 +16,20 @@
                 <input type="text" name="customer" placeholder="customer" /><br /> 
                 <input type="text" name="rentalStartDate" placeholder="rentalStartDate" /><br /> 
                 <input type="text" name="rentalEndDate" placeholder="rentalEndDate" /><br /> 
-                <input type="text" name="deliveryNeeded" placeholder="deliveryNeeded" /><br /> 
+                <label for="deliveryNeeded">Delivery Needed: </label>
+                <select name="deliveryNeeded" placeholder="Delivery Needed">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select><br> 
                 <input type="text" name="totalCost" placeholder="totalCost" /><br /> 
                 <input type="text" name="rentalLocation" placeholder="rentalLocation" /><br /> 
-                <input type="text" name="rentalStatus" placeholder="rentalStatus" /><br /> 
+                <label for="rentalStatus">Rental Status: </label>
+                <select name="rentalStatus" placeholder="Select rentalStatus">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Awaiting Check-in">Awaiting Check-in</option>
+                    <option value="Completed">Completed</option>
+                </select><br>
                 <input class="btn btn-primary btn-sm" type="submit" value="Create" />
             </form>
         </div>
