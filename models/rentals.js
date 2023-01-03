@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 // Create Schema
 const RentalSchema = new Schema(
     {
-        vehicle: String,
+        vehicle: {type: Schema.Types.ObjectId, ref: 'Vehicles'},
         customer: String,
         rentalStartDate: String,
         rentalEndDate: String,

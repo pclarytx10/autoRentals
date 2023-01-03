@@ -2,10 +2,11 @@
 const express = require('express');
 const rentalRouter = express.Router();
 const Rentals = require('../models/rentals.js');
+const Vehicles = require('../models/vehicles.js');
 
 // Routes
 // Seed
-const rentalsSeed = require('../models/rentalSeed.js')    
+const rentalsSeed = require('../models/rentalSeed.js');    
 rentalRouter.get('/seed', (req, res) => {
     Rentals.deleteMany({}, (error, allRentals) => {})
     Rentals.create(rentalsSeed, (error, data) => {
@@ -24,7 +25,11 @@ rentalRouter.get('/', (req,res) => {
 
 // New Route
 rentalRouter.get('/new', (req,res) => {
-    res.render('rentals/new.ejs')
+    Vehicles.find({}, (err, allVehicles) => {
+        res.render('rentals/new.ejs', {
+            vehicles: allVehicles
+        })
+    })
 })
 
 // Delete Route
@@ -53,8 +58,11 @@ rentalRouter.post('/', (req,res) => {
 // Edit Route
 rentalRouter.get('/:id/edit', (req,res) => {
     Rentals.findById(req.params.id, (err, foundRental) => { 
-        res.render('rentals/edit.ejs', {
-            rental: foundRental
+        Vehicles.find({}, (err, allVehicles) => {
+            res.render('rentals/edit.ejs', {
+            rental: foundRental,
+            vehicles: allVehicles
+            })
         })
     })
 })

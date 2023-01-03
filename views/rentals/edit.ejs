@@ -12,9 +12,13 @@
         <div class="container">
             <h1>Edit <%=rental._id%></h1>
             <form action="/rentals/<%=rental._id%>?_method=PUT" method="POST">
-                <input type="text" name="_id" value="<%=rental._id%>" /><br />
+                <!-- <input type="text" name="_id" value="<%=rental._id%>" /><br /> -->
                 <label for="vehicle">Vehicle: </label>
-                <input type="text" name="vehicle" value="<%=rental.vehicle%>" /><br />
+                <select name="vehicle" placeholder="<%=rental.vehicle%>">
+                    <% vehicles.forEach(vehicle => { %>
+                        <option value="<%= vehicle._id %>"><%= vehicle.name %></option>
+                    <% }) %>
+                </select><br>
                 <label for="customer">Customer: </label>
                 <input type="text" name="customer" value="<%=rental.customer%>" /><br /> 
                 <label for="rentalStartDate">Rental Start Date: </label>

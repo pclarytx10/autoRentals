@@ -13,7 +13,11 @@
             <h1>New Rental</h1>
             <form action="/rentals" method="POST">
                 <label for="vehicle">Vehicle: </label>
-                <input type="text" name="vehicle" placeholder="vehicle" /><br />
+                <select name="vehicle" placeholder="vehicle">
+                    <% vehicles.forEach(vehicle => { %>
+                        <option value="<%= vehicle._id %>"><%= vehicle.name %></option>
+                    <% }) %>
+                </select>
                 <label for="customer">Customer: </label>
                 <input type="text" name="customer" placeholder="customer" /><br /> 
                 <label for="rentalStartDate">Rental Start Date: </label>
