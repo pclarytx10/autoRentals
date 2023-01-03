@@ -29,7 +29,12 @@
                 <label for="totalCost">Total Cost: </label>
                 <input type="text" name="totalCost" value="<%=rental.totalCost%>" /><br /> 
                 <label for="rentalLocation">Rental Location: </label>
-                <input type="text" name="rentalLocation" value="<%=rental.rentalLocation%>" /><br /> 
+                <select name="rentalLocation" value="<%=rental.rentalLocation%>">
+                    <option value="Temple,TX">Temple,TX</option>
+                    <option value="MCI Airport">Killeen,TX - MCI Airport</option>
+                    <option value="Austin,TX">Austin,TX</option>
+                    <option value="AUS Airport">Austin,TX - AUS Airport</option>
+                </select><br>
                 <label for="rentalStatus">Rental Status: </label>
                 <select name="rentalStatus" value="<%=rental.rentalStatus%>">
                     <option value="Pending">Pending</option>
