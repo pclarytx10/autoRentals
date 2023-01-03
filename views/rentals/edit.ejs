@@ -22,9 +22,39 @@
                 <label for="customer">Customer: </label>
                 <input type="text" name="customer" value="<%=rental.customer%>" /><br /> 
                 <label for="rentalStartDate">Rental Start Date: </label>
-                <input type="text" name="rentalStartDate" value="<%=rental.rentalStartDate%>" /><br /> 
+                <input type="text" name="rentalStartDate" value="<%=rental.rentalStartDate%>" />
+                <script type="text/javascript">
+                    $(function() {
+                        $('input[name="rentalStartDate"]').daterangepicker({
+                            singleDatePicker: true,
+                            showDropdowns: true,
+                            timePicker: true,
+                            minYear: 2023,
+                            locale: {
+                                format: 'MM/DD/YYYY hh:mm A',
+                                separator: " - ",
+                                }
+                        }, function(start, end, label) {
+                        });
+                    });
+                </script>
                 <label for="rentalEndDate">Rental End Date: </label>
-                <input type="text" name="rentalEndDate" value="<%=rental.rentalEndDate%>" /><br /> 
+                <input type="text" name="rentalEndDate" value="<%=rental.rentalEndDate%>" />
+                <script type="text/javascript">
+                    $(function() {
+                        $('input[name="rentalEndDate"]').daterangepicker({
+                            singleDatePicker: true,
+                            showDropdowns: true,
+                            timePicker: true,
+                            minYear: 2023,
+                            locale: {
+                                format: 'MM/DD/YYYY hh:mm A',
+                                separator: " - ",
+                                }
+                        }, function(start, end, label) {
+                        });
+                    });
+                </script>
                 <label for="deliveryNeeded">Delivery Needed: </label>
                 <select name="deliveryNeeded" value="<%=rental.deliveryNeeded%>">
                     <option value="No">No</option>
