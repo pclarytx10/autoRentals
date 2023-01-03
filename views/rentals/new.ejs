@@ -12,15 +12,20 @@
         <div class="container">
             <h1>New Rental</h1>
             <form action="/rentals" method="POST">
+                <label for="vehicle">Vehicle: </label>
                 <input type="text" name="vehicle" placeholder="vehicle" /><br />
+                <label for="customer">Customer: </label>
                 <input type="text" name="customer" placeholder="customer" /><br /> 
+                <label for="rentalStartDate">Rental Start Date: </label>
                 <input type="text" name="rentalStartDate" placeholder="rentalStartDate" /><br /> 
+                <label for="rentalEndDate">Rental End Date: </label>
                 <input type="text" name="rentalEndDate" placeholder="rentalEndDate" /><br /> 
                 <label for="deliveryNeeded">Delivery Needed: </label>
                 <select name="deliveryNeeded" placeholder="Delivery Needed">
                     <option value="No">No</option>
                     <option value="Yes">Yes</option>
                 </select><br> 
+                <label for="totalCost">Total Cost: </label>
                 <input type="text" name="totalCost" placeholder="totalCost" /><br /> 
                 <label for="rentalLocation">Rental Location: </label>
                 <select name="rentalLocation" placeholder="rentalLocation">
