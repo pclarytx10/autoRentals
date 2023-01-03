@@ -36,7 +36,6 @@ sessionsRouter.post('/', (req,res) => {
 
 // Show Route
 sessionsRouter.get('/logout', (req,res) => {
-    console.log(localStorage.getItem('dpremiumUser'))
         res.render('sessions/logout.ejs', {
         currentUser: req.session.currentUser
     })
