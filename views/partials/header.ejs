@@ -1,15 +1,19 @@
 <h3>Dpremium Rentals</h3>
-
-<ul>
-  <li><a href="/">Home</a></li>
-  <li><a href="/cars">Cars</a></li>
-  <li><a href="/rentals">Rentals</a></li>
-  <li><a href="/users">Users</a></li>
-  <li><a href="/sessions/login">Login</a>
-  <li><a href="/users/new">Signup</a>
+<% if(currentUser) { %>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/cars">Cars</a></li>
+    <li><a href="/rentals">Rentals</a></li>
+    <li><a href="/users">Users</a></li>
   <li>
     <form action="/sessions?_method=DELETE" method="POST">
       <input class="btn btn-danger btn-sm" type="submit" value="Log Out">
     </form>
   </li>
-</ul>
+  </ul>
+<% } else { %>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/sessions/login">Login</a>
+    <li><a href="/users/new">Signup</a>
+<% } %>

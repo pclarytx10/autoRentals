@@ -47,6 +47,10 @@ app.use(session({
       },
       store: store,
 }))
+app.use(function(req, res, next){
+     res.locals.currentUser = req.session.currentUser
+     next()
+ })
 // Mogan middleware for logging HTTP requests
 if (process.env.NODE_ENV !== 'production') {
     app.use(morgan('dev'))
