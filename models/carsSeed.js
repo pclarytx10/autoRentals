@@ -137,6 +137,29 @@ const cars = [
         insuranceDate: "01-23-2023",
         photos: ["equinoxSlv2022.jpg","equinoxSlv2022-1.jpg","equinoxSlv2022-2.jpg","equinoxSlv2022-3.jpg"]
     },
+    {
+        name: "subaruCross2021",
+        make: "Subaru",
+        model: "CrossTrek",
+        year:  "2021",
+        color: "White",
+        mileage: 5000,
+        seats: "5",
+        doors: "4",
+        type: "Midsize SUV",
+        drive: "AWD",
+        fuelType: "Gas",
+        price: "65",
+        locationCity: "Temple",
+        locationState: "TX",
+        vin: "JF2GTHRCOMH248954",
+        license: "SHP-3638",
+        registration: "TX",
+        registrationDate: "08-01-2022",
+        insurance: "Geico",
+        insuranceDate: "01-23-2023",
+        photos: ["subaruCross2021.jpg","subaruCross2021-1.jpg","subaruCross2021-2.jpg","subaruCross2021-3.jpg"]
+    },
   ]
   
   module.exports = cars
