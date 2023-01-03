@@ -26,7 +26,7 @@
 <% function renderList(arrList) { %>
 <%  let listString = []  %>
 <%   arrList.forEach((rental, index) => {  %>
-<%        listString.push('<li><a href="/rentals/' + rental._id + '">' + rental.customer + ', ' + rental.rentalStatus + '</a></li>') %>
+<%        listString.push('<li><a href="/rentals/' + rental._id + '">' + rental.customer + ', ' + rental.rentalStartDate + ', ' + rental.rentalStatus + '</a></li>') %>
 <%    }) %>
 <%    return listString.join(" ")  %>
 <% } %>
