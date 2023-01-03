@@ -4,6 +4,7 @@ Dpremium Rentals is a website for a small car rental business. The site should h
 ## Technologies Used: 
 - HTML / CSS
 - Bootstrap
+- Glide Slider
 - JavaScript / jQuery
 - Node
 - Express 
@@ -55,6 +56,9 @@ A live version of this app is hosted on [Github.io.](https://pclarytx10.github.i
 	- [ ] On submission of form, return Customer entered information and a summary of charges. (Days rented @ $$ per day. Additional fees, Taxes.)
 
 ### Stretch Goals:
+- [x] Carosel for Vehicle Images
+  - [ ] Vehicle Index Page
+  - [x] Vehicle Show Page
 - [x] A Model for Customer / Login Information (Profile)
   - [x] Model Hosted on Atlas
 - [x] Full CRUD for Profile Model

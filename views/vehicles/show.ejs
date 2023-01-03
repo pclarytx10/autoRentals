@@ -9,19 +9,50 @@
             <%- include('../partials/header.ejs')%>
         </header>
       <main>
-          <div class="container">
-        <h3><%=vehicle.name %> </h3>
-        <ul>
-            <% let carData = renderObjs(vehicle) %>
-            <%- carData %> 
-        </ul>
-        <span id="images">
-            <% let imageData = renderImages(vehicle.photos) %>
-            <%- imageData %> 
-        </span>
-        <a href="/cars/<%=vehicle._id; %>/edit">Edit</a>
-        <form  action="/cars/<%=vehicle._id; %>?_method=DELETE" method="POST">
-            <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+        <div class="container">
+            <h3><%=vehicle.name %> </h3>
+            <ul>
+                <% let carData = renderObjs(vehicle) %>
+                <%- carData %> 
+            </ul>
+            <div class="container">
+                <div class="images glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <% let slideData = renderSlides(vehicle.photos) %>
+                            <%- slideData %> 
+                        </ul>
+                    </div>
+                    <div class="glide__arrows" data-glide-el="controls">
+                      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                    </div>
+                </div>
+                <script>
+                    const config = {
+                        type: 'carousel',
+                        gap: 5,
+                        perView: 3,
+                        // autoplay: 3000,
+                        // hoverpause: true,
+                        breakpoints: {
+                            1200: {
+                                perView: 2
+                            },
+                            950: {
+                                perView: 1
+                            }
+                        }
+                    }   
+                    new Glide('.glide', config).mount()
+                </script>
+            </div>
+            
+            <a href="/cars/<%=vehicle._id; %>/edit">Edit</a>
+            <form  action="/cars/<%=vehicle._id; %>?_method=DELETE" method="POST">
+                <input class="btn btn-danger btn-sm" type="submit" value="Delete">
+            </form>
+        </div>
     </main>
     <footer>
         <%- include('../partials/footer.ejs')%>
@@ -47,4 +78,12 @@
         photosList.push('<img src="' + '/images/' + element + '" width="250">' )
             })%>
     <%   return photosList.join("") %>
+<% } %>
+
+<% function renderSlides(slideEntries) { %>
+    <%     let slideList = [] %>
+    <%     slideEntries.forEach(element => {
+        slideList.push('<li class="glide__slide"><img src="' + '/images/' + element + '" width="350"></li>' )
+            })%>
+    <%   return slideList.join("") %>
 <% } %>
