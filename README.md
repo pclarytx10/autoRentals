@@ -56,6 +56,8 @@ A live version of this app is hosted on [Heroku.](https://autorentals.herokuapp.
 	
 ### Stretch Goals:
 - [ ] Automation of Rental form, return Customer entered information and a summary of charges. (Days rented @ $$ per day. Additional fees, Taxes.)
+- [ ] Add Vehicle Image Upload Capability
+  - [ ] Add Image Delete Capability
 - [x] Carosel for Vehicle Images
   - [ ] Vehicle Index Page
   - [x] Vehicle Show Page
