@@ -21,9 +21,39 @@
                 <label for="customer">Customer: </label>
                 <input type="text" name="customer" placeholder="customer" /><br /> 
                 <label for="rentalStartDate">Rental Start Date: </label>
-                <input type="text" name="rentalStartDate" placeholder="rentalStartDate" /><br /> 
+                <input type="text" name="rentalStartDate" value="" />
+                <script type="text/javascript">
+                    $(function() {
+                        $('input[name="rentalStartDate"]').daterangepicker({
+                            singleDatePicker: true,
+                            showDropdowns: true,
+                            timePicker: true,
+                            minYear: 2023,
+                            locale: {
+                                format: 'MM/DD/YYYY hh:mm A',
+                                separator: " - ",
+                                }
+                        }, function(start, end, label) {
+                        });
+                    });
+                </script>
                 <label for="rentalEndDate">Rental End Date: </label>
-                <input type="text" name="rentalEndDate" placeholder="rentalEndDate" /><br /> 
+                <input type="text" name="rentalEndDate" value="" />
+                <script type="text/javascript">
+                    $(function() {
+                        $('input[name="rentalEndDate"]').daterangepicker({
+                            singleDatePicker: true,
+                            showDropdowns: true,
+                            timePicker: true,
+                            minYear: 2023,
+                            locale: {
+                                format: 'MM/DD/YYYY hh:mm A',
+                                separator: " - ",
+                                }
+                        }, function(start, end, label) {
+                        });
+                    });
+                </script>
                 <label for="deliveryNeeded">Delivery Needed: </label>
                 <select name="deliveryNeeded" placeholder="Delivery Needed">
                     <option value="No">No</option>
