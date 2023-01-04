@@ -11,13 +11,12 @@
     <main>
         <div class="container">
             <h1>Edit <%=rental._id%></h1>
-            <form action="/rentals/<%=rental._id%>?_method=PUT" method="POST">
+            <form class="rentalContainer" action="/rentals/<%=rental._id%>?_method=PUT" method="POST">
                 <!-- <input type="text" name="_id" value="<%=rental._id%>" /><br /> -->
                 <label for="vehicle">Vehicle: </label>
-                <select name="vehicle" placeholder="<%=rental.vehicle%>">
-                    <% vehicles.forEach(vehicle => { %>
-                        <option value="<%= vehicle._id %>"><%= vehicle.name %></option>
-                    <% }) %>
+                <select name="vehicle" value="<%= rental.vehicle %>">
+                    <% let vehicleData = renderVehicles(vehicles) %>
+                    <%- vehicleData %> 
                 </select><br>
                 <label for="customer">Customer: </label>
                 <input type="text" name="customer" value="<%=rental.customer%>" /><br /> 
@@ -57,26 +56,26 @@
                 </script>
                 <label for="deliveryNeeded">Delivery Needed: </label>
                 <select name="deliveryNeeded" value="<%=rental.deliveryNeeded%>">
-                    <option value="No">No</option>
-                    <option value="Yes">Yes</option>
+                    <option <%= rental.deliveryNeeded === 'No' ? 'selected' : '' %> value="No">No</option>
+                    <option <%= rental.deliveryNeeded === 'Yes' ? 'selected' : '' %> value="Yes">Yes</option>
                 </select><br> 
                 <label for="totalCost">Total Cost: </label>
                 <input type="text" name="totalCost" value="<%=rental.totalCost%>" /><br /> 
                 <label for="rentalLocation">Rental Location: </label>
                 <select name="rentalLocation" value="<%=rental.rentalLocation%>">
-                    <option value="Temple,TX">Temple,TX</option>
-                    <option value="MCI Airport">Killeen,TX - MCI Airport</option>
-                    <option value="Austin,TX">Austin,TX</option>
-                    <option value="AUS Airport">Austin,TX - AUS Airport</option>
+                    <option <%= rental.rentalLocation === 'Temple,TX' ? 'selected' : '' %> value="Temple,TX">Temple,TX</option>
+                    <option <%= rental.rentalLocation === 'MCI Airport' ? 'selected' : '' %>  value="MCI Airport">Killeen,TX - MCI Airport</option>
+                    <option <%= rental.rentalLocation === 'Austin,TX' ? 'selected' : '' %>  value="Austin,TX">Austin,TX</option>
+                    <option <%= rental.rentalLocation === 'AUS Airport' ? 'selected' : '' %>  value="AUS Airport">Austin,TX - AUS Airport</option>
                 </select><br>
                 <label for="rentalStatus">Rental Status: </label>
-                <select name="rentalStatus" value="<%=rental.rentalStatus%>">
-                    <option value="Pending">Pending</option>
-                    <option value="In Progress">In Progress</option>
-                    <option value="Awaiting Check-in">Awaiting Check-in</option>
-                    <option value="Completed">Completed</option>
+                <select name="rentalStatus" value="<%=rental.rentalStatus%>" >
+                    <option <%= rental.rentalStatus === 'Pending' ? 'selected' : '' %>
+                    value="Pending">Pending</option>
+                    <option <%= rental.rentalStatus === 'In Progress' ? 'selected' : '' %> value="In Progress">In Progress</option>
+                    <option <%= rental.rentalStatus === 'Awaiting Check-in' ? 'selected' : '' %> value="Awaiting Check-in">Awaiting Check-in</option>
+                    <option <%= rental.rentalStatus === 'Completed' ? 'selected' : '' %> value="Completed">Completed</option>
                 </select><br>
-                <!-- <input type="text" name="rentalStatus" value="<%=rental.rentalStatus%>" /><br />  -->
                 <input class="btn btn-primary btn-sm" type="submit" value="Submit" />
             </form>
         </div>
@@ -87,3 +86,10 @@
     </div>
   </body>
 </html>
+
+<% function renderVehicles(vehicles) { %>
+    <%     let vehicleList = [] %>
+    <%     vehicles.forEach(vehicle => {
+         JSON.stringify(vehicle._id) === JSON.stringify(rental.vehicle) ? vehicleList.push(`<option value="${vehicle._id}" selected>${vehicle.name}</option>`) : vehicleList.push(`<option value="${vehicle._id}">${vehicle.name}</option>`) }) %>
+    <%   return vehicleList.join("") %>
+<% } %>

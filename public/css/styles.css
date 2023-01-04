@@ -130,6 +130,17 @@ select {
     text-align: left;
 }
 /* ================ */
+/*   Rental Pages   */
+/* ================ */
+.rentalContainer {
+    display: flex;
+    width: 50%;
+    padding: 1em;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ================ */
 /*     FOOTER       */
 /* ================ */
 footer {
