@@ -117,9 +117,9 @@ A live version of this app is hosted on [Heroku.](https://autorentals.herokuapp.
 - [ ] Be deployed online (Heroku)
 
 ### Option Requirements:
-- [ ] **Use authentication**.
+- [x] **Use authentication**.
 
-- [ ] **Implement basic authorization** by restricting access to certain features, such as editing and deleting a resource, to an authenticated user, or the user that created that resource.
+- [x] **Implement basic authorization** by restricting access to certain features, such as editing and deleting a resource, to an authenticated user, or the user that created that resource.
 
 - [ ] Consume a third-party API.
 
@@ -133,5 +133,5 @@ You need to have turned in the following before starting Project Week:
     - [x]Current/MVP
     - [x]Completed
 - [x]User Stories must follow the following template: As a user, I want [feature], because [reason]. The reason is optional if it's blatantly obvious. Note: Prioritize your user stories within the Ice Box with your "wish list" stories at the bottom.
-- [ ] Wireframes of the main pages of functionality, e.g. Landing Page, Posts Index Page, Favorite Posts Page, Add Post Page, etc.
+- [x] Wireframes of the main pages of functionality, e.g. Landing Page, Posts Index Page, Favorite Posts Page, Add Post Page, etc.
 - [ ] An ERD showing the attributes of each model (or schema in the case of embedding) and the associations between them.
